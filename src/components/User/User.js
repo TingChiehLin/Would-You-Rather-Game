@@ -4,9 +4,9 @@ import './User.scss';
 function User(props) {
     const {name, imageUrl} = props;
     return(
-        <div className="user-container">
-            <img src="" alt="${name}"/>
-            <div>{name}</div>
+        <div className="user-profile">
+            <img src="${imageUrl}" alt="${name}"/>
+            <div className="user-profile-name">{name}</div>
         </div>
     )
 }

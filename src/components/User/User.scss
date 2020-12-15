@@ -1,4 +1,14 @@
-.user-container {
+.user-profile {
+    background-color: red;
     height: 300px;
     width: 100%;
+    position: relative;
+
+    .user-profile-name {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
+
