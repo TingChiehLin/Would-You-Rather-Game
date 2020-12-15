@@ -1,11 +1,12 @@
 import './App.css';
 import LoadingBar from 'react-redux-loading';
+import Login from './components/Login/Login';
 
 function App() {
   return (
     <div className="">
-      <LoadingBar/>
-      
+      {/* <LoadingBar/> */}
+      <Login />
     </div>
   );
 }
