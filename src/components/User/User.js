@@ -5,7 +5,7 @@ function User(props) {
     const {name, imageUrl} = props;
     return(
         <div className="user-profile">
-            <img src="${imageUrl}" alt="${name}"/>
+            <img className="user-profile-image" src={imageUrl} alt={`${name}`}/>
             <div className="user-profile-name">{name}</div>
         </div>
     )

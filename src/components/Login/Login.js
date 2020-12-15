@@ -40,7 +40,7 @@ function Login() {
                 }
             </div>
             <Link to="./">
-                <div className="login-btn center marginTop">Login</div>
+                <div className="login-btn center">Login</div>
             </Link>
         </div>
     )
