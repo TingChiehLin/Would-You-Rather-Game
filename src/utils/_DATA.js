@@ -1,4 +1,4 @@
-export const users = {
+let users = {
   millajovovich: {
     id: 'millajovovich',
     name: 'Milla Jovovich',
