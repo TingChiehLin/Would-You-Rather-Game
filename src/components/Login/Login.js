@@ -28,8 +28,9 @@ function Login(props) {
                     //result.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
                     // users.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
                     // props.storedResult
-                    console.log(props.storedResult.avatarName)
+                    console.log(props.ava)
                 }
+                     <User />
             </div>
             <Link className='login-btn center' to='./' >
                 Login
@@ -41,7 +42,8 @@ function Login(props) {
 //state from Redux as input
 const mapStateToProps = state => {
     return {
-        avatarName: state.avatar.name,
+        //ava for component's property name
+        ava: state.testName,
         // storedResult: state.results
     };
 };
@@ -51,7 +53,8 @@ const mapDispatchToProps = dispatch => {
         // onCreateQuestions: () => dispatch({type: 'CREATE_QUESTIONS'}),
         // onADD_LIKE: () => dispatch({type: 'ADD_LIKE', like:10}),
         // onStoredResult: () => dispatch({type: "STORE_RESULT"})
-        onLoginResult: ()=> dispatch({type: LOGIN_RESULT})
+        onLoginResult: ()=> dispatch({type: actionType.LOGIN_RESULT}),
+
     };
 };
 

@@ -2,6 +2,7 @@ import * as actionType from '../actions';
 
 //store
 const initialState = {
+    testName: 'Tomme',
     avatars: [
         {
             avatarName: "John",
@@ -18,6 +19,12 @@ const initialState = {
 const loginreducer = (state = initialState, action) => {
     switch (action.type) {
         case actionType.LOGIN_RESULT: 
+            const avatars = {
+                id: 0,
+                name: 'Max',
+                avatarURL:''
+            }
+
             return {
                 ...state,
                 avatars: state.avatars.concat({avatars})
