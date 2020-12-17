@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import './Login.scss';
 import logo from './logo.svg';
 import User from '../../components/User/User';
-// import { users } from '../../asset/_DATA';
 
-import { _getUsers } from '../../utils/_DATA.js';
+import { connect } from 'react-redux';
+
+// import { _getUsers } from '../../utils/_DATA.js';
 
 function Login() {
-    const users = []
-    const res = _getUsers().then(data => console.log(data))
-    const result = Object.keys(res)
+
+    // const res = _getUsers().then(data => console.log(data))
+    // const result = Object.keys(res)
+
 
     return (
         <div className="login-page">
@@ -20,7 +22,8 @@ function Login() {
             </div>
             <div className="user-container">
                 {
-                    result.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
+                    // <User avatarName={avatarName} />
+                    //result.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
                     // users.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
                 }
             </div>
@@ -31,5 +34,18 @@ function Login() {
     )
 }
 
-export default Login
+//state from Redux as input
+const mapStateToProps = state => {
+    return {
+        avatarName: state.name
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onCreateQuestions: () => dispatch({type: 'CREATE_QUESTIONs'})
+    };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(Login);
 
