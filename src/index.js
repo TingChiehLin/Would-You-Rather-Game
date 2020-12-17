@@ -1,7 +1,7 @@
 import React, { Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import reducer from './store/reducer';
+import { createStore, combineReducers } from 'redux';
+
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -9,7 +9,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(reducer);
+// import reducer from './store/reducer';
+import loginReducer from './store/reducers/login';
+import homeReducer from './store/reducers/home';
+
+const rootReducer = combineReducers({
+  avatar: loginReducer,
+  infor: homeReducer
+});
+
+const store = createStore(rootReducer);
+
 
 ReactDOM.render(
   <React.StrictMode>
