@@ -32,8 +32,7 @@ function Login(props) {
                     // props.storedResult
                   
                 }
-
-                     <User avatarName={"Tom"} avatarURL={''}/>
+                     <User avatarName={props.userInfo} avatarURL={''}/>
             </div>
             <Link className='login-btn center' to='./' >
                 Login
@@ -46,7 +45,7 @@ function Login(props) {
 const mapStateToProps = state => {
     return {
         ava: state.testName,
-        userInfo: state.results
+        userInfo: state.result
         //ava for component's property name
         // storedResult: state.results
     };
