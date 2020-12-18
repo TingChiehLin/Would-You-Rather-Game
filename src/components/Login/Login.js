@@ -15,7 +15,7 @@ function Login(props) {
     // const res = _getUsers().then(data => console.log(data))
     // const result = Object.keys(res)
     console.log('PROPS',props);
-    console.log('FUNCTION',login_result())
+    console.log('FUNCTION',props.onLoginResult())
 
     return (
         <div className="login-page">
