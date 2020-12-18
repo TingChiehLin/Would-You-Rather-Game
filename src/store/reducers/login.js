@@ -13,7 +13,8 @@ const initialState = {
             avatarName: "Tom",
             avatarImageURL:''
         }
-    ]
+    ],
+    result:{}
 };
 
 // const loginReducer = (state, action) => {
@@ -24,7 +25,8 @@ const initialState = {
 const loginreducer = (state = initialState, action) => {
     switch (action.type) {
         case actionType.LOGIN_RESULT: 
-            const avatars = {
+            
+        const avatars = {
                 id: 0,
                 name: 'Max',
                 avatarURL:''

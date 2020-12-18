@@ -44,7 +44,7 @@ function Login(props) {
 //state from Redux as input
 const mapStateToProps = state => {
     return {
-        ava: state.testName,
+        ava: state.avatar.testName ,
         userInfo: state.result
         //ava for component's property name
         // storedResult: state.results
