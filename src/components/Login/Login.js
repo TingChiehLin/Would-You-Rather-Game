@@ -6,7 +6,6 @@ import User from '../../components/User/User';
 //import * as actionType from '../../store/action/actions';
 //Action Creator
 import {login_result} from '../../store/action/index';
-
 import { connect } from 'react-redux';
 
 // import { _getUsers } from '../../utils/_DATA.js';
@@ -16,6 +15,7 @@ function Login(props) {
     // const res = _getUsers().then(data => console.log(data))
     // const result = Object.keys(res)
     console.log('PROPS',props);
+    console.log('FUNCTION',login_result())
 
     return (
         <div className="login-page">
