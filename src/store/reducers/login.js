@@ -1,4 +1,5 @@
-import * as actionType from '../actions';
+import * as actionType from '../action/actionsType';
+import { updateObject } from '../../utils/utility';
 
 //store
 const initialState = {
@@ -15,6 +16,10 @@ const initialState = {
     ]
 };
 
+// const loginReducer = (state, action) => {
+    
+// };
+
 //reducer
 const loginreducer = (state = initialState, action) => {
     switch (action.type) {
@@ -25,10 +30,14 @@ const loginreducer = (state = initialState, action) => {
                 avatarURL:''
             }
 
-            return {
-                ...state,
-                avatars: state.avatars.concat({avatars})
-            }
+            // return {
+            //     ...state,
+            //     avatars: state.avatars.concat(avatars) 
+            // }
+
+            return updateObject(state, { avatars: state.avatars.concat(avatars) })
+        default:
+            return state
     }
 }
 

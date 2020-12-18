@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import './Login.scss';
 import logo from './logo.svg';
 import User from '../../components/User/User';
-import * as actionType from '../../store/actions';
+//import * as actionType from '../../store/action/actions';
+//Action Creator
+import {login_result} from '../../store/action/index';
 
 import { connect } from 'react-redux';
 
@@ -25,12 +27,13 @@ function Login(props) {
                 {
                     // <User key={storedResult.id} clicked={props.onADD_LIKE}/>
                     // <User avatarName={avatarName} />
-                    //result.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
+                    // result.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
                     // users.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
                     // props.storedResult
-                    console.log(props.ava)
+                  
                 }
-                     <User />
+
+                     <User avatarName={"Tom"} avatarURL={''}/>
             </div>
             <Link className='login-btn center' to='./' >
                 Login
@@ -42,19 +45,23 @@ function Login(props) {
 //state from Redux as input
 const mapStateToProps = state => {
     return {
-        //ava for component's property name
         ava: state.testName,
+        userInfo: state.results
+        //ava for component's property name
         // storedResult: state.results
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        //Action
         // onCreateQuestions: () => dispatch({type: 'CREATE_QUESTIONS'}),
         // onADD_LIKE: () => dispatch({type: 'ADD_LIKE', like:10}),
         // onStoredResult: () => dispatch({type: "STORE_RESULT"})
-        onLoginResult: ()=> dispatch({type: actionType.LOGIN_RESULT}),
+        // onLoginResult: ()=> dispatch({type: actionType.LOGIN_RESULT}),
 
+        //Action Creator
+        onLoginResult: ()=> dispatch(login_result()),
     };
 };
 

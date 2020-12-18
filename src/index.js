@@ -1,7 +1,7 @@
 import React, { Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers } from 'redux';
-
+import { createStore, combineReducers, applyMiddleware, compose} from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -18,7 +18,23 @@ const rootReducer = combineReducers({
   infor: homeReducer
 });
 
-const store = createStore(rootReducer);
+//Middleware
+const logger = store => {
+  return next => {
+    return action => {
+      console.log('[Middleware] Dispatching', action);
+      const result = next(action);
+      console.log('[Middleware] next state', store.getState());
+      return result;
+    }
+  }
+};
+
+//configure Redux Dev Tool
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+//applyMiddleware => connect to store
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
