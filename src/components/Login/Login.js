@@ -16,7 +16,8 @@ function Login(props) {
     // const result = Object.keys(res)
     console.log('PROPS',props);
     console.log('FUNCTION',props.onLoginResult())
-    
+    const users = Object.key(props.userInfo);
+
     return (
         <div className="login-page">
             <div className="lognin-container">
@@ -32,7 +33,9 @@ function Login(props) {
                     // props.storedResult
                     
                 }
-                <User avatarName={props.userInfo} avatarURL={''}/>
+                {
+                    users.map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL}/>)
+                }
             </div>
             <Link className='login-btn center' to='./' >
                 Login
@@ -45,7 +48,7 @@ function Login(props) {
 const mapStateToProps = state => {
     return {
         ava: state.avatar.testName ,
-        userInfo: state.result
+        // userInfo: state.avatar.result
         //ava for component's property name
         //storedResult: state.results
     };
