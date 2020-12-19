@@ -12,8 +12,17 @@ import { connect } from 'react-redux';
 
 class Login extends Component {
 
+    state = {
+        isSelected: false
+    }
+
     componentDidMount() {
          this.props.onLoginResult();
+    }
+
+    onChangeUserState() {
+        this.setState( {isSelected: !this.state.isSelected} );
+        console.log(this.state.isSelected);
     }
 
     render() {
@@ -25,7 +34,7 @@ class Login extends Component {
                 </div>
                 <div className="user-container">
                     {
-                        Object.values(this.props.userInfo).map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL} />)
+                        Object.values(this.props.userInfo).map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL} avatarClick={this.onChangeUserState}/>)
                     }
                 </div>
                 <Link className='login-btn center' to='./' >
