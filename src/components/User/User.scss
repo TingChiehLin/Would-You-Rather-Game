@@ -1,15 +1,31 @@
 .user-profile {
-    background-color: red;
-    height: 300px;
-    width: 100%;
     position: relative;
-    margin: 2rem 2rem 3rem 2rem;
+    margin: 2rem 2rem;
+    
+    .user-profile-image {
+        height: 350px;
+        width: 350px;
+        border-radius: 3%;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background-color:rgba(0, 0, 0, 0.3);
+        border-radius: 3%;
+    }
 
     .user-profile-name {
+        color: white;
         position: absolute;
         bottom: 1rem;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: 20;
     }
 }
 

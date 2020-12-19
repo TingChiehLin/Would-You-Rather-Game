@@ -12,10 +12,6 @@ import { connect } from 'react-redux';
 
 class Login extends Component {
 
-    state = {
-        users: []
-    }
-
     componentDidMount() {
          this.props.onLoginResult();
     }
@@ -29,9 +25,7 @@ class Login extends Component {
                 </div>
                 <div className="user-container">
                     {
-                        // this.state.users.setState({users: Object.values(this.props.userInfo)});
-                        Object.values(this.props.userInfo).map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL}/>)
-                        //this.state.users.map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL}/>)
+                        Object.values(this.props.userInfo).map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL} />)
                     }
                 </div>
                 <Link className='login-btn center' to='./' >
