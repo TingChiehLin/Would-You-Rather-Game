@@ -15,15 +15,11 @@ class Login extends Component {
     state = {
         users: []
     }
-    this.props.onLoginResult();
+
     componentDidMount() {
-        //console.log('FUNCTION',props.onLoginResult())
          this.props.onLoginResult();
-         this.setState({users: Object.values(this.props.userInfo)});
     }
 
-    // const res = _getUsers().then(data => console.log(data))
-    // const result = Object.keys(res)
     render() {
         return (
             <div className="login-page">
@@ -33,16 +29,9 @@ class Login extends Component {
                 </div>
                 <div className="user-container">
                     {
-                        // <User key={storedResult.id} clicked={props.onADD_LIKE}/>
-                        // <User avatarName={avatarName} />
-                        // result.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
-                        // users.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
-                        // props.storedResult
-                        
-                    }
-                    {
-                        
-                        this.state.users.map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL}/>)
+                        // this.state.users.setState({users: Object.values(this.props.userInfo)});
+                        Object.values(this.props.userInfo).map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL}/>)
+                        //this.state.users.map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL}/>)
                     }
                 </div>
                 <Link className='login-btn center' to='./' >
