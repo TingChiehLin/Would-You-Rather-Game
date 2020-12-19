@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
 import logo from './logo.svg';
@@ -10,38 +10,47 @@ import { connect } from 'react-redux';
 
 // import { _getUsers } from '../../utils/_DATA.js';
 
-function Login(props) {
+class Login extends Component {
+
+    state = {
+        users: []
+    }
+    this.props.onLoginResult();
+    componentDidMount() {
+        //console.log('FUNCTION',props.onLoginResult())
+         this.props.onLoginResult();
+         this.setState({users: Object.values(this.props.userInfo)});
+    }
 
     // const res = _getUsers().then(data => console.log(data))
     // const result = Object.keys(res)
-    console.log('PROPS',props);
-    console.log('FUNCTION',props.onLoginResult())
-    const users = Object.values(props.userInfo);
-
-    return (
-        <div className="login-page">
-            <div className="lognin-container">
-                <div className="title">Would You Rather?</div>
-                <img src={logo} className="App-logo" alt="logo"/>
+    render() {
+        return (
+            <div className="login-page">
+                <div className="lognin-container">
+                    <div className="title">Would You Rather?</div>
+                    <img src={logo} className="App-logo" alt="logo"/>
+                </div>
+                <div className="user-container">
+                    {
+                        // <User key={storedResult.id} clicked={props.onADD_LIKE}/>
+                        // <User avatarName={avatarName} />
+                        // result.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
+                        // users.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
+                        // props.storedResult
+                        
+                    }
+                    {
+                        
+                        this.state.users.map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL}/>)
+                    }
+                </div>
+                <Link className='login-btn center' to='./' >
+                    Login
+                </Link>
             </div>
-            <div className="user-container">
-                {
-                    // <User key={storedResult.id} clicked={props.onADD_LIKE}/>
-                    // <User avatarName={avatarName} />
-                    // result.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
-                    // users.map(e => <User key={e.id} name ={e.name} avatarURL={e.avatarURL}/>)
-                    // props.storedResult
-                    
-                }
-                {
-                    users.map((e) => <User key={e.id} avatarName={e.name} avatarURL={e.avatarURL}/>)
-                }
-            </div>
-            <Link className='login-btn center' to='./' >
-                Login
-            </Link>
-        </div>
-    )
+        )
+    }
 }
 
 //state from Redux as input
