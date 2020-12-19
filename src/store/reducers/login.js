@@ -37,7 +37,11 @@ const loginreducer = (state = initialState, action) => {
             //     avatars: state.avatars.concat(avatars) 
             // }
 
-            return updateObject(state, { avatars: state.avatars.concat(avatars) })
+            return updateObject(
+                state, { 
+                    avatars: state.avatars.concat(avatars),
+                    result: action.result
+                })
         default:
             return state
     }
