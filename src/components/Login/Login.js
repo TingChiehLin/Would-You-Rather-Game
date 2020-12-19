@@ -5,7 +5,7 @@ import logo from './logo.svg';
 import User from '../../components/User/User';
 //import * as actionType from '../../store/action/actions';
 //Action Creator
-import {login_result} from '../../store/action/index';
+import { login_result } from '../../store/action/index';
 import { connect } from 'react-redux';
 
 // import { _getUsers } from '../../utils/_DATA.js';
@@ -16,7 +16,7 @@ function Login(props) {
     // const result = Object.keys(res)
     console.log('PROPS',props);
     console.log('FUNCTION',props.onLoginResult())
-    const users = Object.key(props.userInfo);
+    const users = Object.values(props.userInfo);
 
     return (
         <div className="login-page">
@@ -48,7 +48,7 @@ function Login(props) {
 const mapStateToProps = state => {
     return {
         ava: state.avatar.testName ,
-        // userInfo: state.avatar.result
+        userInfo: state.avatar.result
         //ava for component's property name
         //storedResult: state.results
     };

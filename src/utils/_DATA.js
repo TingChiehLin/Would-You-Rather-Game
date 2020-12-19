@@ -2,7 +2,7 @@ let users = {
   millajovovich: {
     id: 'millajovovich',
     name: 'Milla Jovovich',
-    avatarURL: './Milla_Jovovich.jpg',
+    avatarURL: '../../asset/Milla_Jovovich.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
   leonardodicaprio: {
     id: 'leonardodicaprio',
     name: 'Leonardo DiCaprio',
-    avatarURL: './Leonardo_DiCaprio.jpg',
+    avatarURL: '../../asset/Leonardo_DiCaprio.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   emmawatson: {
     id: 'emmawatson',
     name: 'Emma Watson',
-    avatarURL: './Emma_Watson.jpg',
+    avatarURL: '../../asset/Emma_Watson.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
