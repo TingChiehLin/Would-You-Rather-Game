@@ -20,7 +20,7 @@ class Login extends Component {
          this.props.onLoginResult();
     }
 
-    onChangeUserState() {
+    onChangeUserState = () => {
         this.setState( {isSelected: !this.state.isSelected} );
         console.log(this.state.isSelected);
     }

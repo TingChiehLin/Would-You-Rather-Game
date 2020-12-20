@@ -1,6 +1,6 @@
 .user-profile {
     position: relative;
-    margin: 2rem 2rem;
+    margin: 3rem 2rem;
     
     .user-profile-image {
         height: 300px;
@@ -22,11 +22,10 @@
     .user-profile-name {
         color: white;
         position: absolute;
-        bottom: 0.7rem;
-        left: 50%;
+        bottom: 1rem;
         width: 100%;
-        transform: translate(-50%, -50%);
         z-index: 20;
+        text-align: center;
     }
 }
 
