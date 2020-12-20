@@ -1,6 +1,7 @@
 import React from 'react'
+import './Home.scss';
 
-function Message() {
+function Home() {
     return (
         <div>
             
@@ -8,4 +9,4 @@ function Message() {
     )
 }
 
-export default Message
+export default Home

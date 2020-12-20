@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
+import Home from './components/Home/Home';
 import reportWebVitals from './reportWebVitals';
 
 // import reducer from './store/reducer';
@@ -40,7 +41,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <App />
+        <Route path='/' exact component={App}/>
+        <Route path='/home' exact component={Home}/>
+        {/* <App /> */}
       </Router>
     </Provider>
   </React.StrictMode>,

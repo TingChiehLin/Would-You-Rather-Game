@@ -14,10 +14,10 @@ export const showResult = async () =>  {
 }
 
 //Middleware
-export const login_result = () => {
+export const login_result = (res) => {
     //thunk -> return a function
     return async dispatch => {
-        dispatch(await showResult())
+        dispatch(await showResult(res))
         // }, 2000);
         //thunk
         // setTimeout(() => {
