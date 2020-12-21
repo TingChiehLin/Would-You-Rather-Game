@@ -8,6 +8,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Home from './components/Home/Home';
+import Addquestion from './components/Addquestion/Addquestion';
+import Leaderboard from './components/Leaderboard/Leaderboard';
+
+import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Footer/Footer';
+
 import reportWebVitals from './reportWebVitals';
 
 // import reducer from './store/reducer';
@@ -41,10 +47,14 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-      <Route path='/' exact component={App}/>
+        <Route path='/' exact component={App}/>
         <Route path='/login' exact component={App}/>
+        
+        
         <Route path='/home' exact component={Home}/>
-        {/* <App /> */}
+        <Route path='/leaderboard' exact component={Leaderboard}/>
+        <Route path='/addquestion' exact component={Addquestion}/>
+
       </Router>
     </Provider>
   </React.StrictMode>,

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './Navigation.scss';
 
+import { IconContext } from "react-icons";
 import { FcHome } from 'react-icons/fc';
 import { FcStatistics } from 'react-icons/fc';
 import { FcQuestions } from 'react-icons/fc';
@@ -10,32 +11,44 @@ const Navigation = (props) => {
     return (
         <div>
             <div className="navigation-container">
-                <Link to='./home'>
-                    <div className="logo">
-                        <img className="navigation-logo" src="./logo.svg" alt="logo"/>
-                    </div>
-                </Link>
+                <div className="navigation-logo">
+                    <Link to='./home'>
+                        <div className="logo">
+                            <img className="navigation-image" src="./logo.svg" alt="logo"/>
+                        </div>
+                    </Link>
+                </div>
                 <div className="navigation-items">
                     <div className="navigation-center">
-                        <FcHome />
+                        <IconContext.Provider value={{size:'1.3rem'}}>
+                            <FcHome />
+                        </IconContext.Provider>
                         <span className="marginLeft">Home</span>
                     </div>
                     <div className="navigation-center">
-                        <FcStatistics />
+                        <IconContext.Provider value={{size:'1.3rem'}}>
+                            <FcStatistics />
+                        </IconContext.Provider>
                         <span className="marginLeft">Leaderboard</span>
                     </div>
                     <div className="navigation-center">
-                        <FcQuestions/>
+                        <IconContext.Provider value={{size:'1.3rem'}}>
+                            <FcQuestions/>
+                        </IconContext.Provider>
                         <span className="marginLeft">Ask Question</span>
                     </div>
-                    <div className="profile">
-                        {/* <img className="profile-image" src="" alt=""/> */}
-                        <div className="profile-image"></div>
-                        <div className="navigation-name">
-                            {}ss
-                        </div>
+                </div>
+                <div className="profile">
+                    {/* <img className="profile-image" src="" alt=""/> */}
+                    <div className="profile-image"></div>
+                    <div className="navigation-name">
+                        Emili
                     </div>
                 </div>
+                {/* <ul>
+                    <li>Source Code</li>
+                    <li>Log Out</li>
+                </ul> */}
             </div>
         </div>
     )
