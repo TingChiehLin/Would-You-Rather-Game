@@ -26,9 +26,13 @@ const Navigation = (props) => {
                         <FcQuestions/>
                         <span className="marginLeft">Ask Question</span>
                     </div>
-                </div>
-                <div className="profile">
-
+                    <div className="profile">
+                        {/* <img className="profile-image" src="" alt=""/> */}
+                        <div className="profile-image"></div>
+                        <div className="navigation-name">
+                            {}ss
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
