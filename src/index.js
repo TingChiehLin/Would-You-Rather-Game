@@ -41,7 +41,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <Route path='/' exact component={App}/>
+      <Route path='/' exact component={App}/>
+        <Route path='/login' exact component={App}/>
         <Route path='/home' exact component={Home}/>
         {/* <App /> */}
       </Router>

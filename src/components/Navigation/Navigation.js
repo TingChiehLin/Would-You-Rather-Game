@@ -10,9 +10,11 @@ const Navigation = (props) => {
     return (
         <div>
             <div className="navigation-container">
-                <div className="logo">
-                    <img className="navigation-logo" src="./logo.svg" alt="logo"/>
-                </div>
+                <Link to='./home'>
+                    <div className="logo">
+                        <img className="navigation-logo" src="./logo.svg" alt="logo"/>
+                    </div>
+                </Link>
                 <div className="navigation-items">
                     <div className="navigation-center">
                         <FcHome />

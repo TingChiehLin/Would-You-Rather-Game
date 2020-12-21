@@ -19,11 +19,11 @@
         height: 100%;
         color: white;
         font-weight: 500;
-        font-size: 1rem;
+        font-size: 1.2rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 3rem;
+        gap: 2rem;
     }
 }
 
@@ -40,7 +40,7 @@
     gap: 0.8rem;
     // position: absolute;
     // right: 3rem;
-
+    font-size: 1rem;
     .profile-image {
         border-radius: 50%;
         background-color: red;
@@ -50,5 +50,5 @@
 }
 
 .marginLeft {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 }
