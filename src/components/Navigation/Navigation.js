@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './Navigation.scss';
 
-import { AiOutlineHome } from 'react-icons/AiOutlineHome';
-import { GrScorecard } from 'react-icons/GrScorecard';
-import { BsQuestionSquare } from 'react-icons/BsQuestionSquare';
+import { AiOutlineHome } from 'react-icons/ai';
+import { GrScorecard } from 'react-icons/gr';
+import { BsQuestionSquare } from 'react-icons/bs';
 
 const Navigation = (props) => {
     return (
