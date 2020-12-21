@@ -33,6 +33,8 @@ const Navigation = (props) => {
     )
 }
 
+export default Navigation
+
 {/* <IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
   <div>
     <FaFolder />
