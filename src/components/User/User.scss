@@ -1,36 +1,23 @@
+$border-size: 2px;
+$background-color: red;
+
+// @keyframes animshadow {
+//     100% {
+//         box-shadow: 0px 0px 50px 20px rgba(112,111,211,0);
+//     }
+// }
+
 .user-profile {
     margin: 3rem 2rem;
     border:none;
     outline: none;
     cursor: pointer;
     position: relative;
-    --border-size: 2px;
-    --background-color: red;
-
-    &:before {
-        content: '';
-        position: absolute;
-        top:0;
-        left: 0;
-        right:0;
-        bottom: 0;
-        z-index: -1;
-        border: var(--border-size) solid var(--background-color);
-        transition: top, left, right, bottom, 100ms ease-in-out;
-    }
+    transition: .5s;
 
     &:hover {
-        top: calc(var(--border-size) * -2);
-        left: calc(var(--border-size) * -2);
-        right: calc(var(--border-size) * -2);
-        bottom: calc(var(--border-size) * -2);
-    }
-
-    &:focus {
-        top: calc(var(--border-size) * -2);
-        left: calc(var(--border-size) * -2);
-        right: calc(var(--border-size) * -2);
-        bottom: calc(var(--border-size) * -2);
+        // border: $border-size solid $background-color;
+        // animation: $animshadow .5s forwards;
     }
 
     .user-profile-image {
