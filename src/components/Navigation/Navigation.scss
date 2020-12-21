@@ -1,0 +1,34 @@
+.navigation-container {
+    width: 100%;
+    height: 80px;
+    background-color: #02253a;
+    position: relative;
+
+    .navigation-logo {
+        height: 5vmin;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .navigation-items {
+        height: 100%;
+        color: white;
+        font-weight: 500;
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+}
+
+.navigation-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marginLeft {
+    margin-left: 1rem;
+}

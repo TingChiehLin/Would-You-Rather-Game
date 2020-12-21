@@ -2,27 +2,29 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './Navigation.scss';
 
-import { AiOutlineHome } from 'react-icons/ai';
-import { GrScorecard } from 'react-icons/gr';
-import { BsQuestionSquare } from 'react-icons/bs';
+import { FcHome } from 'react-icons/fc';
+import { FcStatistics } from 'react-icons/fc';
+import { FcQuestions } from 'react-icons/fc';
 
 const Navigation = (props) => {
     return (
         <div>
             <div className="navigation-container">
                 <div className="logo">
-
+                    <img className="navigation-logo" src="./logo.svg" alt="logo"/>
                 </div>
                 <div className="navigation-items">
-                    <div>
-                        <AiOutlineHome />
-                        <span>Home</span>
+                    <div className="navigation-center">
+                        <FcHome />
+                        <span className="marginLeft">Home</span>
                     </div>
-                    <div>
-                        Leaderboard
+                    <div className="navigation-center">
+                        <FcStatistics />
+                        <span className="marginLeft">Leaderboard</span>
                     </div>
-                    <div>
-                        Ask Question
+                    <div className="navigation-center">
+                        <FcQuestions/>
+                        <span className="marginLeft">Ask Question</span>
                     </div>
                 </div>
                 <div className="profile">

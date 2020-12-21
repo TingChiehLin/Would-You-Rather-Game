@@ -1,5 +1,6 @@
 $border-size: 2px;
-$background-color: linear-gradient(180deg,transparent,#03e9f4);
+// $background-color: linear-gradient(180deg,transparent,#03e9f4);
+$background-color: linear-gradient(45deg, #ff0000, #00f0f0, #00ff00, #0000ff, #ff0000, #00f0f0, #00ff00, #0000ff, #f00f0f);
 
 .user-profile {
     margin: 3rem 2rem;
@@ -7,31 +8,25 @@ $background-color: linear-gradient(180deg,transparent,#03e9f4);
     outline: none;
     cursor: pointer;
     position: relative;
+    border-radius: 20px;
 
-    &:before:after {
-        content: "";
-        position: absolute;
-        background: $background-color;
-        width:100%;
-        height:100%;
-        transform: scale(1.02);
-        z-index: -1;
-        background-size: cover;
-        animation: $animationShow 5s linear infinite;
-        border-radius: 3%;
-        filter: blur(20px);
-    }
-
-    &:hover:active {
-        bottom:0;
-        right:-100%;
-        width:100%;
-        height: 2px;
-        background-color: $background-color;
-        animation: $animationShow 2s linear infinite;
-        animation-delay: 0.25s;
+    &:hover, &:active {
+        &:before{
+            content: "";
+            position: absolute;
+            background: $background-color;
+            width: 100%;
+            height: 100%;
+            transform: scale(1);
+            z-index: -1;
+            background-size: 300%;
+            animation: animationShow 20s linear infinite;
+            border-radius: 3%;
+            animation-delay: 0.25s;
+            filter: blur(20px);
+        }
         box-shadow: 0 0 5px $background-color;
-    }
+}
 
     .user-profile-image {
         height: 300px;
