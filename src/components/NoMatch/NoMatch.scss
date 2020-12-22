@@ -2,10 +2,11 @@
     width: 100vw;
     height: 100vh;
     background: center / cover no-repeat url('./404.svg');
+    overflow: auto;
 
     .nomatch-container-intro {
-        width: 100px;
+        margin-top: 10rem;
+        text-align: center;
         color: white;
-        margin: 0 auto;
     }
 }

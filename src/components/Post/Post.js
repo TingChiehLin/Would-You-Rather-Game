@@ -1,7 +1,8 @@
 import React, { useState, useEffect} from 'react';
-import './Message.scss';
+import './Post.scss';
 
-function Message() {
+function Post(props) {
+    
     return (
         <div className="message-container">
             
@@ -9,4 +10,4 @@ function Message() {
     )
 }
 
-export default Message
+export default Post

@@ -27,6 +27,14 @@ class Login extends Component {
         }
         console.log(this.state.isSelected);
         console.log(id);
+
+    }
+
+    onLogin = () => {
+        if (this.state.user === '') {
+            alert("Please Select a user");
+            return
+        }
     }
 
     render() {
@@ -41,7 +49,7 @@ class Login extends Component {
                         Object.values(this.props.userInfo).map((e) => <User key={e.id} id={e.id} isSelected={this.state.user === e.id} avatarName={e.name} avatarURL={e.avatarURL} avatarClick={this.onChangeUserState}/>)
                     }
                 </div>
-                <Link className='login-btn center' to='./home'>
+                <Link className='login-btn center' to='./home' onClick={this.onLogin}>
                     Login
                 </Link>
             </div>
@@ -61,7 +69,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        //Action
+
+        // Action
         // onCreateQuestions: () => dispatch({type: 'CREATE_QUESTIONS'}),
         // onADD_LIKE: () => dispatch({type: 'ADD_LIKE', like:10}),
         // onStoredResult: () => dispatch({type: "STORE_RESULT"})
@@ -69,6 +78,7 @@ const mapDispatchToProps = dispatch => {
 
         //Action Creator
         onLoginResult: ()=> dispatch(login_result()),
+
     };
 };
 

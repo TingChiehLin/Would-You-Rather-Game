@@ -5,7 +5,7 @@ import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 
 import AskQuestion from '../Addquestion/Addquestion';
-import Message from '../Message/Message';
+import Post from '../Post/Post';
 import Leaderboard from '../Leaderboard/Leaderboard';
 import Switchquestion from '../Switchquestion/Switchquestion';
 
@@ -17,7 +17,7 @@ function Home() {
             <Navigation/>
             <Switchquestion/>
             <AskQuestion/>
-            <Message/>
+            <Post/>
             <Leaderboard/>
             <Footer/>
         </div>

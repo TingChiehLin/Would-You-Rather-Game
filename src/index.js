@@ -51,10 +51,10 @@ ReactDOM.render(
         <Switch>
           <Route path='/' exact component={App}/>
           <Route path='/login' exact component={App}/>
-          
           <Route path='/home' exact component={Home}/>
           <Route path='/leaderboard' exact component={Leaderboard}/>
           <Route path='/addquestion' exact component={Addquestion}/>
+          <Route path='/:question_id' exact component={Addquestion}/>
           <Route path="*">
             <NoMatch />
           </Route>
