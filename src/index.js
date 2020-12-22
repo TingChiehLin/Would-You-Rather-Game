@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
@@ -13,6 +13,7 @@ import Leaderboard from './components/Leaderboard/Leaderboard';
 
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
+import NoMatch from './components/NoMatch/NoMatch';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -47,14 +48,17 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <Route path='/' exact component={App}/>
-        <Route path='/login' exact component={App}/>
-        
-        
-        <Route path='/home' exact component={Home}/>
-        <Route path='/leaderboard' exact component={Leaderboard}/>
-        <Route path='/addquestion' exact component={Addquestion}/>
-
+        <Switch>
+          <Route path='/' exact component={App}/>
+          <Route path='/login' exact component={App}/>
+          
+          <Route path='/home' exact component={Home}/>
+          <Route path='/leaderboard' exact component={Leaderboard}/>
+          <Route path='/addquestion' exact component={Addquestion}/>
+          <Route path="*">
+            <NoMatch />
+          </Route>
+        </Switch>
       </Router>
     </Provider>
   </React.StrictMode>,
