@@ -1,29 +1,20 @@
-import React, { Component, Fragment} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
-import Home from './components/Home/Home';
-import Addquestion from './components/Addquestion/Addquestion';
-import Leaderboard from './components/Leaderboard/Leaderboard';
-
-import Navigation from './components/Navigation/Navigation';
-import Footer from './components/Footer/Footer';
-import NoMatch from './components/NoMatch/NoMatch';
 
 import reportWebVitals from './reportWebVitals';
-
 // import reducer from './store/reducer';
-import loginReducer from './store/reducers/login';
-import homeReducer from './store/reducers/home';
+import userReducer from './store/reducers/userReducer';
+import questionReducer from './store/reducers/questionReducer';
 
 const rootReducer = combineReducers({
-  avatar: loginReducer,
-  infor: homeReducer
+  users: userReducer,
+  questions: questionReducer
 });
 
 //Middleware
@@ -47,19 +38,7 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <Switch>
-          <Route path='/' exact component={App}/>
-          <Route path='/login' exact component={App}/>
-          <Route path='/home' exact component={Home}/>
-          <Route path='/leaderboard' exact component={Leaderboard}/>
-          <Route path='/addquestion' exact component={Addquestion}/>
-          <Route path='/:question_id' exact component={Addquestion}/>
-          <Route path="*">
-            <NoMatch />
-          </Route>
-        </Switch>
-      </Router>
+      <App/>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

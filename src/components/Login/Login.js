@@ -7,13 +7,12 @@ import User from '../../components/User/User';
 //Action Creator
 import { login_result } from '../../store/action/index';
 import { connect } from 'react-redux';
-
 // import { _getUsers } from '../../utils/_DATA.js';
 
 class Login extends Component {
 
     state = {
-        user: ''
+        userID: ''
     }
 
     componentDidMount() {
@@ -23,7 +22,7 @@ class Login extends Component {
     onChangeUserState = (id) => {
 
         if (id) {
-            this.setState( {user: id} ); 
+            this.setState( {userID: id} ); 
         }
         console.log(this.state.isSelected);
         console.log(id);
@@ -31,7 +30,7 @@ class Login extends Component {
     }
 
     onLogin = () => {
-        if (this.state.user === '') {
+        if (this.state.userID === '') {
             alert("Please Select a user");
             return
         }
@@ -46,7 +45,7 @@ class Login extends Component {
                 </div>
                 <div className="user-container">
                     {
-                        Object.values(this.props.userInfo).map((e) => <User key={e.id} id={e.id} isSelected={this.state.user === e.id} avatarName={e.name} avatarURL={e.avatarURL} avatarClick={this.onChangeUserState}/>)
+                        Object.values(this.props.userInfo).map((e) => <User key={e.id} id={e.id} isSelected={this.state.userID === e.id} avatarName={e.name} avatarURL={e.avatarURL} avatarClick={this.onChangeUserState}/>)
                     }
                 </div>
                 <Link className='login-btn center' to='./home' onClick={this.onLogin}>
@@ -60,8 +59,8 @@ class Login extends Component {
 //state from Redux as input
 const mapStateToProps = state => {
     return {
-        ava: state.avatar.testName ,
-        userInfo: state.avatar.result
+        user: state.users.testName ,
+        userInfo: state.users.result
         //ava for component's property name
         //storedResult: state.results
     };
