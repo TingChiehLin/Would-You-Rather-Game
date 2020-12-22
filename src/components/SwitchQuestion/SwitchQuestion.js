@@ -1,7 +1,7 @@
 import React from 'react'
-import './SwitchQuestion.scss';
+import './Switchquestion.scss';
 
-function SwitchQuestion() {
+function Switchquestion() {
     return (
         <div className="switchquestion-container">
             <button className="btn-non-answer">Unanswer Question</button>
@@ -10,4 +10,4 @@ function SwitchQuestion() {
     )
 }
 
-export default SwitchQuestion
+export default Switchquestion

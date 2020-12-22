@@ -8,7 +8,10 @@ function NoMatch() {
 
     return (
         <div className="nomatch-container">
-            <h3>No match for <code>{pathname}</code></h3>
+            <div className="nomatch-container-intro">
+                <h1>No match for <code>{pathname}</code></h1>
+                <p>Please type correct path.</p>
+            </div>
         </div>
     )
 }
