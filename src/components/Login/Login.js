@@ -71,6 +71,7 @@ const mapDispatchToProps = dispatch => {
     return {
 
         // Action
+        
         // onCreateQuestions: () => dispatch({type: 'CREATE_QUESTIONS'}),
         // onADD_LIKE: () => dispatch({type: 'ADD_LIKE', like:10}),
         // onStoredResult: () => dispatch({type: "STORE_RESULT"})

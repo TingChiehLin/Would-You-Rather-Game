@@ -14,6 +14,13 @@ export const showResult = async () =>  {
     };
 }
 
+export const set_userstate = (userID) => {
+    return {
+        type: actionType.SET_USERSTATE,
+        userID: userID
+    };
+};
+
 //Middleware
 export const login_result = (res) => {
     //thunk -> return a function
@@ -27,12 +34,4 @@ export const login_result = (res) => {
         //     dispatch(saveResult(res))
         // }, 2000);
     }
-};
-
-//SET_USERSTATE
-export const set_userstate = (userID) => {
-    return {
-        type: actionType.SET_USERSTATE,
-        userID: userID
-    };
 };

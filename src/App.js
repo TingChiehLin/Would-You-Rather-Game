@@ -1,4 +1,4 @@
-import React, { Component, Fragment} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import './App.css';
@@ -12,13 +12,26 @@ import Leaderboard from './components/Leaderboard/Leaderboard';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 import NoMatch from './components/NoMatch/NoMatch';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+
+import { connect } from 'react-redux';
+
+import {
+  TransitionGroup,
+  CSSTransition
+} from "react-transition-group";
 
 function App() {
   return (
     <React.Fragment>
       <LoadingBar style={{ backgroundColor: '#008ce0', height: '5px' }}/>
       <Router>
+        <ScrollToTop />
           <Navigation/>
+        <CSSTransition
+          classNames="fade"
+          timeout={300}
+        >
         <Switch>
           <Route path='/' exact component={Login}/>
           <Route path='/login' exact component={Login}/>
@@ -30,25 +43,20 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
+        </CSSTransition>
           <Footer/>
       </Router>
     </React.Fragment>
   );
 }
 
-export default App;
+export default App
 
-{/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-</header> */}
+// export default connect(
+//   (state) => {
+//     authedUser: state.avatar.authedUser
+//   },
+//   {
+
+//   }
+// )(App);
