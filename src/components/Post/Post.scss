@@ -1,6 +1,8 @@
-.message-container {
-    width: 45rem;
+.post-container {
+    width: 50rem;
     height: 30rem;
-    margin: 3rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(47, 163, 235);
 }

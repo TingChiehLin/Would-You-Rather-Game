@@ -3,7 +3,6 @@ import { updateObject } from '../../utils/utility';
 
 //store
 const initialState = {
-    testName: 'Tomme',
     avatars: [
         {
             avatarName: "John",
@@ -14,7 +13,8 @@ const initialState = {
             avatarImageURL:''
         }
     ],
-    result:{}
+    result:{},
+    authedUser:''
 };
 
 // const loginReducer = (state, action) => {
@@ -41,6 +41,12 @@ const loginreducer = (state = initialState, action) => {
                 state, { 
                     avatars: state.avatars.concat(avatars),
                     result: action.result
+                })
+
+        case actionType.SET_USERSTATE:
+                return updateObject(
+                    state, {
+                        authedUser: action.userID
                 })
         default:
             return state

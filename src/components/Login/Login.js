@@ -5,7 +5,7 @@ import './Login.scss';
 import User from '../../components/User/User';
 //import * as actionType from '../../store/action/actions';
 //Action Creator
-import { login_result } from '../../store/action/index';
+import { login_result, set_userstate } from '../../store/action/index';
 import { connect } from 'react-redux';
 // import { _getUsers } from '../../utils/_DATA.js';
 
@@ -19,18 +19,19 @@ class Login extends Component {
          this.props.onLoginResult();
     }
 
-    onChangeUserState = (id) => {
+    onChangeUserState = (userID) => {
 
-        if (id) {
-            this.setState( {userID: id} ); 
+        if (userID) {
+            this.setState( {userID: userID} ); 
         }
         console.log(this.state.isSelected);
-        console.log(id);
-
+        console.log(userID);
+        this.props.Update_userstate(userID);
     }
 
-    onLogin = () => {
+    onLogin = (e) => {
         if (this.state.userID === '') {
+            e.preventDefault();
             alert("Please Select a user");
             return
         }
@@ -59,8 +60,8 @@ class Login extends Component {
 //state from Redux as input
 const mapStateToProps = state => {
     return {
-        user: state.users.testName ,
-        userInfo: state.users.result
+        userInfo: state.users.result,
+        authedUser: state.users.authedUser
         //ava for component's property name
         //storedResult: state.results
     };
@@ -76,9 +77,9 @@ const mapDispatchToProps = dispatch => {
         // onLoginResult: ()=> dispatch({type: actionType.LOGIN_RESULT}),
 
         //Action Creator
-        onLoginResult: ()=> dispatch(login_result()),
-
-    };
+        onLoginResult: () => dispatch(login_result()),
+        Update_userstate: (userID) => dispatch(set_userstate(userID))
+    };  
 };
 
 export default connect(mapStateToProps,mapDispatchToProps)(Login);

@@ -1,5 +1,6 @@
 import * as actionType from './actionsType';
 import { _getUsers }  from '../../utils/_DATA';
+import { hideLoading, showLoading } from 'react-redux-loading';
 
 //Action Creator
 
@@ -17,11 +18,21 @@ export const showResult = async () =>  {
 export const login_result = (res) => {
     //thunk -> return a function
     return async dispatch => {
+        dispatch(showLoading())
         dispatch(await showResult(res))
+        dispatch(hideLoading())
         // }, 2000);
         //thunk
         // setTimeout(() => {
         //     dispatch(saveResult(res))
         // }, 2000);
     }
+};
+
+//SET_USERSTATE
+export const set_userstate = (userID) => {
+    return {
+        type: actionType.SET_USERSTATE,
+        userID: userID
+    };
 };

@@ -1,14 +1,25 @@
+$btnWidth: 20rem;
+$btnHeight: 3rem;
+
 .switchquestion-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    margin: 1rem auto;
 }
 
 .btn-non-answer {
-    
+    width: $btnWidth;
+    height: $btnHeight;
+    outline: none;
+    border: 0;
+    background-color: #61dafb;
 }
 
 .btn-answer {
-
+    width: $btnWidth;
+    height: $btnHeight;
+    outline: none;
+    border: 0;
+    background-color: #5eba00;
 }

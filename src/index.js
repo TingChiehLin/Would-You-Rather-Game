@@ -12,9 +12,12 @@ import reportWebVitals from './reportWebVitals';
 import userReducer from './store/reducers/userReducer';
 import questionReducer from './store/reducers/questionReducer';
 
+import { loadingBarReducer } from 'react-redux-loading-bar';
+
 const rootReducer = combineReducers({
   users: userReducer,
-  questions: questionReducer
+  questions: questionReducer,
+  loadingBar: loadingBarReducer
 });
 
 //Middleware

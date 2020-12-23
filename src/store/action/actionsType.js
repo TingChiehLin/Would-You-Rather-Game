@@ -3,4 +3,6 @@ export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const ADD_LIKE = 'ADD_LIKE';
 export const STORE_RESULT = 'STORE_RESULT';
 export const DELETE = 'DELETE';
+
 export const LOGIN_RESULT = 'LOGIN_RESULT';
+export const SET_USERSTATE = 'SET_USERSTATE';

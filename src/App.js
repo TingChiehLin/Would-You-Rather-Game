@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import './App.css';
 // import LoadingBar from 'react-redux-loading';
 import Login from './components/Login/Login';
-// import LoadingBar from 'react-redux-loading-bar'
+import LoadingBar from 'react-redux-loading-bar'
 
 import Home from './components/Home/Home';
 import Addquestion from './components/Addquestion/Addquestion';
@@ -15,9 +15,10 @@ import NoMatch from './components/NoMatch/NoMatch';
 
 function App() {
   return (
-    <div>
-      {/* <Navigation/> */}
+    <React.Fragment>
+      <LoadingBar style={{ backgroundColor: '#008ce0', height: '5px' }}/>
       <Router>
+          <Navigation/>
         <Switch>
           <Route path='/' exact component={Login}/>
           <Route path='/login' exact component={Login}/>
@@ -29,9 +30,9 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
+          <Footer/>
       </Router>
-      {/* <Footer/> */}
-    </div>
+    </React.Fragment>
   );
 }
 
