@@ -5,7 +5,7 @@ function Footer() {
     return (
         <div className="footer-container">
             <div className="footer-intro">
-                 © Copyright 2020. Developed by Ting Chieh Lin
+                 © Copyright 2021. Developed by Jay Lin
             </div>
         </div>
     )

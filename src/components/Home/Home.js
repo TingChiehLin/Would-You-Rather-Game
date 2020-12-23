@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 function Home() {
 
     return (
-        <div>
+        <div className="home-container">
             <Page/>
             <AskQuestion/>
             <Leaderboard/>

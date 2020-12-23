@@ -8,9 +8,7 @@ function Page() {
     return (
         <div className="page-container">
             <Switchquestion/>
-            <div>
-                <Post/>
-            </div>
+            <Post/>
         </div>
     )
 }
