@@ -2,19 +2,14 @@ import * as actionType from './actionsType';
 import { _getQuestions }  from '../../utils/_DATA';
 
 //Action Creator
-const showResult = async() => {
-    const updateQuestionResult = _getQuestions();
-    return {
+const showResult = (questions) => ({
         type: actionType.GET_QUESTION,
-        questions: updateQuestionResult
-    }
-}
-
-// Middleware
+        questions
+})
 
 export const question_result = () => {
-    
     return async dispatch => {
-        dispatch(await showResult())
+        const questions = await _getQuestions();
+        dispatch(showResult(questions))
     }
 }

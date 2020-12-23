@@ -7,13 +7,16 @@ const initialState = {
 
 const questionReducer = (state = initialState, action) => {
      switch(action.type) {
-         case actionType.GET_QUESTION:
+        case actionType.GET_QUESTION:
              return updateObject(
                  state, {
                     question: action.questions
                  }
              )
+        default:
+            return state
      }
+
 }
 
 export default questionReducer;

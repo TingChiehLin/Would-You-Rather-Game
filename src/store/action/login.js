@@ -21,7 +21,6 @@ export const set_userstate = (userID) => {
     };
 };
 
-//Middleware
 export const login_result = (res) => {
     //thunk -> return a function
     return async dispatch => {
