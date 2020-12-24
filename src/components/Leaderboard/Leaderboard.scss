@@ -2,8 +2,15 @@ $background-color: #868e96;
 $Leaderboard-color: #868e96;
 
 .leaderboard-container {
-    width: 60rem;
+    width: 50rem;
     height: 35rem;
     background-color: $Leaderboard-color;
     margin:0 auto;
+
+    h3 {
+        text-align: center;
+        // padding: 3rem;
+    }
 }
+
+

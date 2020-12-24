@@ -18,6 +18,11 @@ $btnHeight: 3rem;
     color: white;
     cursor: pointer;
     border-radius: 30px;
+    transition: all 0.4s ease 0s;
+    
+    &:hover {
+        background: #4398af;
+    }
 }
 
 .btn-answer {
@@ -30,4 +35,10 @@ $btnHeight: 3rem;
     color: white;
     cursor: pointer;
     border-radius: 30px;
+    transition: all 0.4s ease 0s;
+
+    &:hover {
+        background: #4f9c01;
+    }
+    
 }

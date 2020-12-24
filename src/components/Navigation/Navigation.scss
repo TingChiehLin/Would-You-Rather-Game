@@ -30,6 +30,7 @@
         align-items: center;
         gap: 2rem;
         cursor: pointer;
+
     }
 }
 
@@ -37,6 +38,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover {
+        color: rgb(211, 211, 211);
+    }
 }
 
 .profile {
@@ -51,7 +55,7 @@
     font-size: 0.7rem;
     color: white;
     margin-right: 3rem;
-    
+
     .profile-image {
         border-radius: 50%;
         background-color: red;

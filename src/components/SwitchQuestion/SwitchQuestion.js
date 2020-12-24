@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import './Switchquestion.scss';
 
-function Switchquestion() {
+function Switchquestion(props) {
     return (
         <div className="switchquestion-container">
             <button className="btn-non-answer">Unanswer Question</button>

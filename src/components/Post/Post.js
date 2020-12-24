@@ -1,7 +1,8 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 
 import { IconContext } from 'react-icons';
 import { FcAnswers } from 'react-icons/fc';
+import '../../utils/utility.scss';
 import './Post.scss';
 
 function Post(props) {
@@ -9,7 +10,7 @@ function Post(props) {
     return (
         <div className="post-container">
             <div className="post-container-intro">
-                <div>Leonardo DiCaprio</div>
+                <div className="post-container-intro-name">Leonardo DiCaprio</div>
                 <img 
                     src=""
                     alt=""
@@ -18,15 +19,25 @@ function Post(props) {
             </div>
 
             <div className="post-container-question">
-
+                <div>Would you rather?</div>
+                <div className="post-container-question-title">Which developer will you become?</div>
+                <form action="" className="post-container-question-option">
+                    {/* <input type="radio" value="be a Python developer">  */}
+                    <input className="input-radio-size" type="radio" id="dewey" name="drone" value="dewey"/>
+                    <label htmlFor="">be a Python developer</label>
+                    {/* <input type="radio" value="be a React developer">be a React developer */}
+                    <input className="input-radio-size" type="radio" id="dewey" name="drone" value="dewey"/>
+                    <label htmlFor="">be a React developer</label>
+                </form>
             </div>
+
 
             <button className="post-btn">
                 <div className="center">
                     <IconContext.Provider value={{size:'2rem'}}>
                         <FcAnswers/>
                     </IconContext.Provider>
-                    <span className="marginLeft">Answer</span>
+                    <span className="marginLeft">Submit Answer</span>
                 </div>
             </button>
         </div>

@@ -15,18 +15,24 @@ $btnColor: #02253a;
         width: 100%;
         height: 15vh;
         background-color: #02253a;
-        color: white;
-        font-weight: 500;
-        font-size: 1.2rem;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        .post-container-intro-name {
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .post-profile-image {
+            width: 7rem;
+            height: 7rem;
+            background-color: red;
+            border-radius: 50%;
+        }    
     }
-
-    .post-profile-image {
-        width: 7rem;
-        height: 7rem;
-        background-color: red;
-        border-radius: 50%;
-    }    
-
     .post-btn {
         padding:0.3rem 7rem;
         color: white;
@@ -40,6 +46,10 @@ $btnColor: #02253a;
         left:50%;
         transform: translate(-50%);
         border-radius: 30px;
+
+        &:hover {
+            background-color: #033a5c;
+        }
     }
 }
 

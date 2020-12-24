@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './Navigation.scss';
 
@@ -7,7 +7,24 @@ import { FcHome } from 'react-icons/fc';
 import { FcStatistics } from 'react-icons/fc';
 import { FcQuestions } from 'react-icons/fc';
 
+import AskQuestion from '../Addquestion/Addquestion';
+import Leaderboard from '../Leaderboard/Leaderboard';
+
 const Navigation = (props) => {
+
+    const [selectedTab, setSelectedTab] = useState(0);
+
+    useEffect(() => {
+        //Update componenet
+
+    })
+
+    setSelectedTab = () => {
+        setSelectedTab([...selectedTab, {
+
+        }])
+    }
+
     return (
         <div>
             <div className="navigation-container">
@@ -19,7 +36,7 @@ const Navigation = (props) => {
                     </Link>
                 </div>
                 <div className="navigation-items">
-                    <div className="navigation-center">
+                    <div className="navigation-center" onClick={setSelectedTab}>
                         <IconContext.Provider value={{size:'1.3rem'}}>
                             <FcHome />
                         </IconContext.Provider>
