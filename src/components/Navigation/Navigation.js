@@ -19,41 +19,39 @@ const Navigation = (props) => {
 
     })
 
-    setSelectedTab = () => {
-        setSelectedTab([...selectedTab, {
-
-        }])
+    const setCurrentTab = () => {
+        // setSelectedTab([...selectedTab, {
+            
+        // }])
     }
 
     return (
         <div>
             <div className="navigation-container">
-                <div className="navigation-logo">
-                    <Link to='./home'>
+                    <Link to='./home' className="navigation-logo">
                         <div className="logo">
                             <img className="navigation-image" src="./logo.svg" alt="logo"/>
                         </div>
                     </Link>
-                </div>
                 <div className="navigation-items">
-                    <div className="navigation-center" onClick={setSelectedTab}>
+                    <Link to={`/home`} className="navigation-center" onClick={setCurrentTab}>
                         <IconContext.Provider value={{size:'1.3rem'}}>
                             <FcHome />
                         </IconContext.Provider>
                         <span className="marginLeft">Home</span>
-                    </div>
-                    <div className="navigation-center">
+                    </Link>
+                    <Link to={`/leaderboard`} className="navigation-center" >
                         <IconContext.Provider value={{size:'1.3rem'}}>
                             <FcStatistics />
                         </IconContext.Provider>
                         <span className="marginLeft">Leaderboard</span>
-                    </div>
-                    <div className="navigation-center">
+                    </Link>
+                    <Link to={`/addquestion`} className="navigation-center" >
                         <IconContext.Provider value={{size:'1.3rem'}}>
                             <FcQuestions/>
                         </IconContext.Provider>
                         <span className="marginLeft">Ask Question</span>
-                    </div>
+                    </Link>
                 </div>
                 <div className="profile">
                     {/* <img className="profile-image" src="" alt=""/> */}

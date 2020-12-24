@@ -22,9 +22,6 @@
 
     .navigation-items {
         height: 100%;
-        color: white;
-        font-weight: 500;
-        font-size: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -38,6 +35,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    
     &:hover {
         color: rgb(211, 211, 211);
     }
