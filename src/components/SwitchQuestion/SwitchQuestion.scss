@@ -5,7 +5,7 @@ $btnHeight: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem auto;
+    margin-bottom: 1rem;
 }
 
 .btn-non-answer {
@@ -17,6 +17,7 @@ $btnHeight: 3rem;
     font-weight: 700;
     color: white;
     cursor: pointer;
+    border-radius: 30px;
 }
 
 .btn-answer {
@@ -28,4 +29,5 @@ $btnHeight: 3rem;
     font-weight: 700;
     color: white;
     cursor: pointer;
+    border-radius: 30px;
 }

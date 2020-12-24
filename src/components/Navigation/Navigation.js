@@ -40,7 +40,7 @@ const Navigation = (props) => {
                 </div>
                 <div className="profile">
                     {/* <img className="profile-image" src="" alt=""/> */}
-                    <div className="profile-image"></div>
+                    <img className="profile-image"/>
                     <div className="navigation-name">
                         Emili
                     </div>
