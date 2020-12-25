@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import './App.css';
@@ -14,15 +14,20 @@ import NoMatch from './components/NoMatch/NoMatch';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import { connect } from 'react-redux';
+import { login_result } from './store/action/index';
 
 import {
-  TransitionGroup,
   CSSTransition
 } from "react-transition-group";
 
 function App() {
 
-  
+  const [authedUser, setAuthedUser] = useState("");
+
+  useEffect(() => {
+    this.props.loadUser();
+  })
+
   return (
     <React.Fragment>
       <LoadingBar style={{ backgroundColor: '#008ce0', height: '5px' }}/>
@@ -51,20 +56,12 @@ function App() {
   );
 }
 
+
 export default connect(
   (state) => {
-    // authedUser: state.users.authedUser
-  },
+    authedUser: state.users.authedUser
+  },{
+    loadUsers: () => dispatch(login_result())
+  }
 )(App);
 
-
-
-
-// export default connect(
-//   (state) => {
-//     authedUser: state.avatar.authedUser
-//   },
-//   {
-
-//   }
-// )(App);
