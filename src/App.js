@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import './App.css';
-// import LoadingBar from 'react-redux-loading';
 import Login from './components/Login/Login';
 import LoadingBar from 'react-redux-loading-bar'
 
@@ -22,6 +21,8 @@ import {
 } from "react-transition-group";
 
 function App() {
+
+  
   return (
     <React.Fragment>
       <LoadingBar style={{ backgroundColor: '#008ce0', height: '5px' }}/>
@@ -50,7 +51,14 @@ function App() {
   );
 }
 
-export default App
+export default connect(
+  (state) => {
+    // authedUser: state.users.authedUser
+  },
+)(App);
+
+
+
 
 // export default connect(
 //   (state) => {

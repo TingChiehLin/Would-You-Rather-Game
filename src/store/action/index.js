@@ -8,6 +8,6 @@ export {
 } from './createquestion';
 
 export {
-    
+    question_result
 } from './home';
 

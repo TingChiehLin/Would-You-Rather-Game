@@ -1,4 +1,8 @@
 .home-container {
-    background-color: #f7f7f7;
+    background-color: white;
     padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

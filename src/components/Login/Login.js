@@ -33,7 +33,12 @@ class Login extends Component {
             e.preventDefault();
             alert("Please Select a user");
             return
-        }   
+        } else {
+            this.setState({
+                authedUser: this.state.userID 
+            })
+        }
+        
     }
 
     render() {
