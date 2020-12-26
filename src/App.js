@@ -41,15 +41,14 @@ function App(props) {
           timeout={300}
         >
         <Switch>
-            {props.authedUser === '' && <Route component={Login}/>}
-            {/* <Route path='/login' exact component={Login}/> */}
-            <Route path='/home' exact component={Home}/>
-            <Route path='/leaderboard' exact component={Leaderboard}/>
-            <Route path='/addquestion' exact component={Addquestion}/>
-            <Route path='/:question_id' exact component={Addquestion}/>
-            <Route path="*">
-              <NoMatch />
-            </Route>
+          {props.authedUser === '' && <Route component={Login}/>}
+          <Route path='/home' exact component={Home}/>
+          <Route path='/leaderboard' exact component={Leaderboard}/>
+          <Route path='/addquestion' exact component={Addquestion}/>
+          <Route path='/questions/:question_id' exact component={Addquestion}/>
+          <Route path="*">
+            <NoMatch />
+          </Route>
           {/* {authedUser === '' ? <Route path='/' exact component={Login}/> :
           <>
             <Route path='/login' exact component={Login}/>
@@ -60,8 +59,8 @@ function App(props) {
             <Route path="*">
               <NoMatch />
             </Route>
-          </>
-        } */}
+          </> */}
+        }
         </Switch>
         </CSSTransition>
         <Footer/>
