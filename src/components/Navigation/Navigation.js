@@ -10,6 +10,9 @@ import { FcQuestions } from 'react-icons/fc';
 import AskQuestion from '../Addquestion/Addquestion';
 import Leaderboard from '../Leaderboard/Leaderboard';
 
+import { login_result } from '../../store/action/index';
+import { connect } from 'react-redux';
+
 const Navigation = (props) => {
 
     const [selectedTab, setSelectedTab] = useState(0);
@@ -28,7 +31,7 @@ const Navigation = (props) => {
     return (
         <div>
             <div className="navigation-container">
-                    <Link to='./home' className="navigation-logo">
+                    <Link to='./' className="navigation-logo">
                         <div className="logo">
                             <img className="navigation-image" src="./logo.svg" alt="logo"/>
                         </div>
@@ -55,7 +58,7 @@ const Navigation = (props) => {
                 </div>
                 <div className="profile">
                     {/* <img className="profile-image" src="" alt=""/> */}
-                    <img className="profile-image"/>
+                    <img className="profile-image" src="`${}`"/>
                     <div className="navigation-name">
                         Emili
                     </div>
@@ -69,11 +72,19 @@ const Navigation = (props) => {
     )
 }
 
-export default Navigation
+const mapStateToProps = state => {
+    return {
 
-{/* <IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
-  <div>
-    <FaFolder />
-  </div>
-</IconContext.Provider> */}
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        loadUsers: () => dispatch(login_result()),
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation)
+
 

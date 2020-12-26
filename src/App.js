@@ -20,12 +20,14 @@ import {
   CSSTransition
 } from "react-transition-group";
 
-function App() {
+function App(props) {
 
   const [authedUser, setAuthedUser] = useState("");
 
   useEffect(() => {
-    this.props.loadUser();
+    props.loadUsers();
+    //problems
+    console.log('authedUser:',authedUser);
   })
 
   return (
@@ -33,13 +35,23 @@ function App() {
       <LoadingBar style={{ backgroundColor: '#008ce0', height: '5px' }}/>
       <Router>
         <ScrollToTop />
-          <Navigation/>
+            {authedUser !== '' && <Navigation/>}
         <CSSTransition
           classNames="fade"
           timeout={300}
         >
         <Switch>
-          <Route path='/' exact component={Login}/>
+            {authedUser === '' && <Route component={Login}/>}
+            {/* <Route path='/login' exact component={Login}/> */}
+            <Route path='/home' exact component={Home}/>
+            <Route path='/leaderboard' exact component={Leaderboard}/>
+            <Route path='/addquestion' exact component={Addquestion}/>
+            <Route path='/:question_id' exact component={Addquestion}/>
+            <Route path="*">
+              <NoMatch />
+            </Route>
+
+          {/* {authedUser === '' ? <Route path='/' exact component={Login}/> :
           <Route path='/login' exact component={Login}/>
           <Route path='/home' exact component={Home}/>
           <Route path='/leaderboard' exact component={Leaderboard}/>
@@ -48,6 +60,8 @@ function App() {
           <Route path="*">
             <NoMatch />
           </Route>
+        } */}
+
         </Switch>
         </CSSTransition>
           <Footer/>
@@ -58,10 +72,10 @@ function App() {
 
 
 export default connect(
-  (state) => {
+  (state) => ({
     authedUser: state.users.authedUser
-  },{
-    loadUsers: () => dispatch(login_result())
+  }),{
+    loadUsers: login_result
   }
 )(App);
 

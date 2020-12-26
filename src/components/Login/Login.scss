@@ -1,5 +1,5 @@
 .App-logo {
-    height: 20vmin;
+    height: 25vmin;
     pointer-events: none;
 }
 
@@ -12,6 +12,7 @@
     flex-direction: column;
     gap: 1.5rem;
     background-color: rgb(2, 37, 58);
+    padding: 3rem 0;
 }
 
 .user-container {
@@ -20,7 +21,6 @@
     align-items: center;
     gap: 3rem;
     width: 100%;
-    margin-top:2rem;
 }
 
 .login-btn {
@@ -35,7 +35,7 @@
     width: 200px;
     position: relative;
     text-align: center;
-    
+
     &::after {
         content: ">";
         font-weight: 400;
