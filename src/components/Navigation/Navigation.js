@@ -15,18 +15,13 @@ import { connect } from 'react-redux';
 
 const Navigation = (props) => {
 
-    const [selectedTab, setSelectedTab] = useState(0);
-
     useEffect(() => {
         //Update componenet
-
+        props.loadUsers()
     })
 
-    const setCurrentTab = () => {
-        // setSelectedTab([...selectedTab, {
-            
-        // }])
-    }
+    const {userInfo, authedUser} = props;
+    const userDetails = userInfo[authedUser];
 
     return (
         <div>
@@ -37,7 +32,7 @@ const Navigation = (props) => {
                         </div>
                     </Link>
                 <div className="navigation-items">
-                    <Link to={`/home`} className="navigation-center" onClick={setCurrentTab}>
+                    <Link to={`/home`} className="navigation-center">
                         <IconContext.Provider value={{size:'1.3rem'}}>
                             <FcHome />
                         </IconContext.Provider>
@@ -57,10 +52,9 @@ const Navigation = (props) => {
                     </Link>
                 </div>
                 <div className="profile">
-                    {/* <img className="profile-image" src="" alt=""/> */}
-                    <img className="profile-image" src="`${}`"/>
+                    <img className="profile-image" src="${userDetails.avatarURL}"/>
                     <div className="navigation-name">
-                        Emili
+                        {userDetails.name}
                     </div>
                 </div>
                 {/* <ul>
@@ -74,13 +68,14 @@ const Navigation = (props) => {
 
 const mapStateToProps = state => {
     return {
-
+        userInfo: state.users.result,
+        authedUser: state.users.authedUser
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadUsers: () => dispatch(login_result()),
+        loadUsers: () => dispatch(login_result())
     }
 }
 
