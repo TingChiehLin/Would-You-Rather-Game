@@ -35,13 +35,13 @@ function App(props) {
       <LoadingBar style={{ backgroundColor: '#008ce0', height: '5px' }}/>
       <Router>
         <ScrollToTop />
-            {authedUser !== '' && <Navigation/>}
+            {props.authedUser !== '' && <Navigation/>}
         <CSSTransition
           classNames="fade"
           timeout={300}
         >
         <Switch>
-            {authedUser === '' && <Route component={Login}/>}
+            {props.authedUser === '' && <Route component={Login}/>}
             {/* <Route path='/login' exact component={Login}/> */}
             <Route path='/home' exact component={Home}/>
             <Route path='/leaderboard' exact component={Leaderboard}/>
@@ -50,21 +50,21 @@ function App(props) {
             <Route path="*">
               <NoMatch />
             </Route>
-
           {/* {authedUser === '' ? <Route path='/' exact component={Login}/> :
-          <Route path='/login' exact component={Login}/>
-          <Route path='/home' exact component={Home}/>
-          <Route path='/leaderboard' exact component={Leaderboard}/>
-          <Route path='/addquestion' exact component={Addquestion}/>
-          <Route path='/:question_id' exact component={Addquestion}/>
-          <Route path="*">
-            <NoMatch />
-          </Route>
+          <>
+            <Route path='/login' exact component={Login}/>
+            <Route path='/home' exact component={Home}/>
+            <Route path='/leaderboard' exact component={Leaderboard}/>
+            <Route path='/addquestion' exact component={Addquestion}/>
+            <Route path='/:question_id' exact component={Addquestion}/>
+            <Route path="*">
+              <NoMatch />
+            </Route>
+          </>
         } */}
-
         </Switch>
         </CSSTransition>
-          <Footer/>
+        <Footer/>
       </Router>
     </React.Fragment>
   );

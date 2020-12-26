@@ -23,9 +23,6 @@ class Login extends Component {
         if (userID) {
             this.setState( {userID: userID} ); 
         }
-        console.log(this.state.isSelected);
-        console.log(userID);
-        this.props.Update_userstate(userID);
     }
 
     onLogin = (e) => {
@@ -37,8 +34,8 @@ class Login extends Component {
             this.setState({
                 authedUser: this.state.userID 
             })
+            this.props.Update_userstate(this.state.userID);
         }
-        
     }
 
     render() {
