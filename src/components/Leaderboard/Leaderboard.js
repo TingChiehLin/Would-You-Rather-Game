@@ -29,8 +29,12 @@ function Leaderboard(props) {
                 </tr>
                 <tbody>
                     {
-                    //Ranking
                     userDestails.map(e => {
+                        const answers = e.answers.length;
+                        const questions = e.questions.length;
+                        const score = answers + questions;
+                        // leaderboard.sort((l1, l2) => (l2.score - l1.score));
+                        
                         <TableCell key={e.id} score={e.id} userName={e.name} userAvatarUrl={e.avatarURL} answerQuestion={e.answers.length} createQuestion={e.questions.length}/>
                     })}
                 </tbody>
