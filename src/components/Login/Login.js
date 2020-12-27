@@ -50,7 +50,7 @@ class Login extends Component {
                         Object.values(this.props.userInfo).map((e) => <User key={e.id} id={e.id} isSelected={this.state.userID === e.id} avatarName={e.name} avatarURL={e.avatarURL} avatarClick={this.onChangeUserState}/>)
                     }
                 </div>
-                <Link className='login-btn marginCenter' style={{marginBottom:'2rem'}} onClick={this.onLogin}>
+                <Link className='login-btn marginCenter' to="" style={{marginBottom:'2rem'}} onClick={this.onLogin}>
                     Login
                 </Link>
             </div>

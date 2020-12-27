@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import "../../utils/utility.scss";
 import './Leaderboard.scss';
 
+import TableCell from '../TableCell/TableCell';
 
+import { login_result } from '../../store/action/index';
+import { connect } from 'react-redux';
 
-function Leaderboard() {
+function Leaderboard(props) {
+
+    useEffect(()=> {
+        props.loadUsers()
+    })
+
+    const {userInfo} = props;
+    const userDestails = Object.values(userInfo);
+
     return (
         <div className="leaderboard-container">
             <div className="leaderboard-container-title">Leaderboard</div>
@@ -17,39 +28,11 @@ function Leaderboard() {
                     <th>CREATED QUESTIONS</th>
                 </tr>
                 <tbody>
-                    <tr>
-                        <td className="content-table-score">
-                            <span className="content-table-badge">3</span>
-                        </td>
-                        <td className="content-table-user">
-                            <img src="" alt=""/>
-                            <div>name</div>
-                        </td>
-                        <td>4</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td className="content-table-score">
-                            <span className="content-table-badge">3</span>
-                        </td>
-                        <td className="content-table-user">
-                            <img src="" alt=""/>
-                            <div>name</div>
-                        </td>
-                        <td>4</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td className="content-table-score">
-                            <span className="content-table-badge">3</span>
-                        </td>
-                        <td className="content-table-user">
-                            <img src="" alt=""/>
-                            <div>name</div>
-                        </td>
-                        <td>4</td>
-                        <td>2</td>
-                    </tr>
+                    {
+                    //Ranking
+                    userDestails.map(e => {
+                        <TableCell key={e.id} score={e.id} userName={e.name} userAvatarUrl={e.avatarURL} answerQuestion={e.answers.length} createQuestion={e.questions.length}/>
+                    })}
                 </tbody>
             </table>
 
@@ -57,4 +40,17 @@ function Leaderboard() {
     )
 }
 
-export default Leaderboard
+const mapStateToProps = state => {
+    return {
+        userInfo: state.users.result,
+        authedUser: state.users.authedUser
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        loadUsers: () => dispatch(login_result())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Leaderboard)
