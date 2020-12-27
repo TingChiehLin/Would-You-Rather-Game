@@ -14,7 +14,6 @@ function Home() {
         <div className="home-container">
             <Switchquestion/>
             <Page/>
-
         </div>
     )
 }

@@ -6,9 +6,7 @@ import { IconContext } from "react-icons";
 import { FcHome } from 'react-icons/fc';
 import { FcStatistics } from 'react-icons/fc';
 import { FcQuestions } from 'react-icons/fc';
-
-import AskQuestion from '../Addquestion/Addquestion';
-import Leaderboard from '../Leaderboard/Leaderboard';
+import { VscSignOut } from "react-icons/vsc";
 
 import { login_result } from '../../store/action/index';
 import { connect } from 'react-redux';
@@ -32,7 +30,7 @@ const Navigation = (props) => {
                         </div>
                     </Link>
                 <div className="navigation-items">
-                    <Link to={`/home`} className="navigation-center">
+                    <Link to={`/`} className="navigation-center">
                         <IconContext.Provider value={{size:'1.3rem'}}>
                             <FcHome />
                         </IconContext.Provider>
@@ -52,14 +50,17 @@ const Navigation = (props) => {
                     </Link>
                 </div>
                 <div className="profile">
-                    <img className="profile-image" src="${userDetails.avatarURL}"/>
+                    <img className="profile-image" src={`${userDetails.avatarURL}`}/>
                     <div className="navigation-name">
                         {userDetails.name}
                     </div>
                 </div>
                 {/* <ul>
                     <li>Source Code</li>
-                    <li>Log Out</li>
+                    <li>
+                        <VscSignOut/>
+                        Log Out
+                    </li>
                 </ul> */}
             </div>
         </div>
@@ -78,7 +79,6 @@ const mapDispatchToProps = dispatch => {
         loadUsers: () => dispatch(login_result())
     }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation)
 
