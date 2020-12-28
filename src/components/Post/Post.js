@@ -6,7 +6,7 @@ import '../../utils/utility.scss';
 import './Post.scss';
 
 function Post(props) {
-
+    const {title} = props;
     return (
         <div className="post-container">
             <div className="post-container-intro">
@@ -19,7 +19,7 @@ function Post(props) {
             </div>
 
             <div className="post-container-question">
-                <div>Would you rather?</div>
+                <h3>Would you rather?</h3>
                 <div className="post-container-question-title">Which developer will you become?</div>
                 <form action="" className="post-container-question-option">
                     {/* <input type="radio" value="be a Python developer">  */}

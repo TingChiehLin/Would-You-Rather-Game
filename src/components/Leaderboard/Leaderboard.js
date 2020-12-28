@@ -5,7 +5,7 @@ import './Leaderboard.scss';
 
 import TableCell from '../TableCell/TableCell';
 
-import { login_result } from '../../store/action/index';
+import { login_result } from '../../store/action';
 import { connect } from 'react-redux';
 
 function Leaderboard(props) {
@@ -19,7 +19,6 @@ function Leaderboard(props) {
     const getObjectLength = (object) => {
        return Object.keys(object).length;
     }
-    const leaderboard = [];
 
     return (
         <div className="leaderboard-container">
@@ -34,14 +33,25 @@ function Leaderboard(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                    userDestails.map(e => {
-                        const answers = getObjectLength(e.answers);
-                        const questions = e.questions.length;
+                 {
+                    userDestails.map(user => { 
+                        const answers = getObjectLength(user.answers);
+                        const questions = user.questions.length;
                         const score = answers + questions;
-                        e.score = score;
-                        return <TableCell key={e.id} score={e.score} userName={e.name} userAvatarUrl={e.avatarURL} answerQuestion={getObjectLength(e.answers)} createQuestion={e.questions.length}/>
-                    }).sort((l1, l2) => (l2.scroe - l1.score))}
+                        return {
+                            ...user,
+                            score
+                        };
+                    }).sort((user1, user2) => (user2.score - user1.score)).map(user => (
+                        <TableCell 
+                            key={user.id} 
+                            score={user.score} 
+                            userName={user.name} 
+                            userAvatarUrl={user.avatarURL} 
+                            answerQuestion={getObjectLength(user.answers)} 
+                            createQuestion={user.questions.length}/>
+                    ))
+                 }
                 </tbody>
             </table>
 

@@ -5,7 +5,7 @@ import '../../utils/utility.scss';
 import User from '../../components/User/User';
 //import * as actionType from '../../store/action/actions';
 //Action Creator
-import { login_result, set_userstate } from '../../store/action/index';
+import { login_result, set_userstate } from '../../store/action';
 import { connect } from 'react-redux';
 
 class Login extends Component {

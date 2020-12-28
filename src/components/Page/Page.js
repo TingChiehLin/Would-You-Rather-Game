@@ -5,7 +5,7 @@ import Post from '../Post/Post';
 function Page() {
     return (
         <div className="page-container">
-            <Post/>
+            <Post />
         </div>
     )
 }

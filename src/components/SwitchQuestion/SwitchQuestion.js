@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
-import './Switchquestion.scss';
+import './SwitchQuestion.scss';
 
-function Switchquestion(props) {
+function SwitchQuestion(props) {
 
     const [selectedTab, setSelecTedTab] = useState(0)
 
@@ -13,4 +13,4 @@ function Switchquestion(props) {
     )
 }
 
-export default Switchquestion
+export default SwitchQuestion

@@ -14,7 +14,7 @@ import NoMatch from './components/NoMatch/NoMatch';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import { connect } from 'react-redux';
-import { login_result } from './store/action/index';
+import { login_result } from './store/action';
 
 import {
   CSSTransition

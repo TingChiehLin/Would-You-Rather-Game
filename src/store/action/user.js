@@ -34,3 +34,4 @@ export const login_result = (res) => {
         // }, 2000);
     }
 };
+

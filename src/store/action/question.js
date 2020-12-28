@@ -15,3 +15,10 @@ export const question_result = () => {
         dispatch(showResult(questions))
     }
 }
+
+export const create_question = (message) => {
+    return {
+        type: actionType.CREATE_QUESTIONS,
+        message: message
+    };
+}

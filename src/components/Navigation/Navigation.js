@@ -8,7 +8,7 @@ import { FcStatistics } from 'react-icons/fc';
 import { FcQuestions } from 'react-icons/fc';
 import { VscSignOut } from "react-icons/vsc";
 
-import { login_result } from '../../store/action/index';
+import { login_result } from '../../store/action';
 import { connect } from 'react-redux';
 
 const Navigation = (props) => {
