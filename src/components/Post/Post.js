@@ -31,7 +31,6 @@ function Post(props) {
                 </form>
             </div>
 
-
             <button className="post-btn">
                 <div className="center">
                     <IconContext.Provider value={{size:'2rem'}}>
