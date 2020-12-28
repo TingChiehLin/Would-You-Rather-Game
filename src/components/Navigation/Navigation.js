@@ -13,10 +13,10 @@ import { connect } from 'react-redux';
 
 const Navigation = (props) => {
 
-    useEffect(() => {
-        //Update componenet
-        props.loadUsers()
-    })
+    // useEffect(() => {
+    //     //Update componenet
+    //     props.loadUsers()
+    // })
 
     const {userInfo, authedUser} = props;
     const userDetails = userInfo[authedUser];

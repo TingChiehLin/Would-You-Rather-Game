@@ -10,33 +10,38 @@ import { connect } from 'react-redux';
 
 function Leaderboard(props) {
 
-    useEffect(()=> {
-        props.loadUsers()
-    })
+    // useEffect(()=> {
+    //     props.loadUsers()
+    // })
 
     const {userInfo} = props;
     const userDestails = Object.values(userInfo);
+    const getObjectLength = (object) => {
+       return Object.keys(object).length;
+    }
+    const leaderboard = [];
 
     return (
         <div className="leaderboard-container">
             <div className="leaderboard-container-title">Leaderboard</div>
             <table className="content-table">
-                <tr>
-                    <th>SCORE</th>
-                    <th>USER</th>
-                    <th>ANSWERED QUESTIONS</th>
-                    <th>CREATED QUESTIONS</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>SCORE</th>
+                        <th>USER</th>
+                        <th>ANSWERED QUESTIONS</th>
+                        <th>CREATED QUESTIONS</th>
+                    </tr>
+                </thead>
                 <tbody>
                     {
                     userDestails.map(e => {
-                        const answers = e.answers.length;
+                        const answers = getObjectLength(e.answers);
                         const questions = e.questions.length;
                         const score = answers + questions;
-                        // leaderboard.sort((l1, l2) => (l2.score - l1.score));
-                        
-                        <TableCell key={e.id} score={e.id} userName={e.name} userAvatarUrl={e.avatarURL} answerQuestion={e.answers.length} createQuestion={e.questions.length}/>
-                    })}
+                        e.score = score;
+                        return <TableCell key={e.id} score={e.score} userName={e.name} userAvatarUrl={e.avatarURL} answerQuestion={getObjectLength(e.answers)} createQuestion={e.questions.length}/>
+                    }).sort((l1, l2) => (l2.scroe - l1.score))}
                 </tbody>
             </table>
 
