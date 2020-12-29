@@ -8,15 +8,12 @@ import { saveQuestion, saveAnswer} from '../../store/action';
 import { connect } from 'react-redux';
 
 function Home(props) {
-
-    const {sortedQuestions} = props
-    console.log("sortedQuestions: ",sortedQuestions)
-
+    
     useEffect(() => {
-        // props.loadQuestion({});
-        // props.loadAnswer({});
+        props.loadQuestion({});
+        props.loadAnswer({});
     })
-
+    console.log("sortedQuestions: ",props.question)
     return (
         <div className="home-container">
             <SwitchQuestion/>
