@@ -8,15 +8,10 @@ import { FcStatistics } from 'react-icons/fc';
 import { FcQuestions } from 'react-icons/fc';
 import { VscSignOut } from "react-icons/vsc";
 
-import { login_result } from '../../store/action';
+import { user_result } from '../../store/action';
 import { connect } from 'react-redux';
 
 const Navigation = (props) => {
-
-    // useEffect(() => {
-    //     //Update componenet
-    //     props.loadUsers()
-    // })
 
     const {userInfo, authedUser} = props;
     const userDetails = userInfo[authedUser];
@@ -76,7 +71,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadUsers: () => dispatch(login_result())
+        loadUsers: () => dispatch(user_result())
     }
 }
 

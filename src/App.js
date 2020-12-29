@@ -14,7 +14,7 @@ import NoMatch from './components/NoMatch/NoMatch';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import { connect } from 'react-redux';
-import { login_result } from './store/action';
+import { user_result } from './store/action';
 
 import {
   CSSTransition
@@ -26,8 +26,6 @@ function App(props) {
 
   useEffect(() => {
     props.loadUsers();
-    //problems
-    console.log('authedUser:',authedUser);
   })
 
   return (
@@ -76,7 +74,7 @@ export default connect(
   (state) => ({
     authedUser: state.users.authedUser
   }),{
-    loadUsers: login_result
+    loadUsers: user_result
   }
 )(App);
 

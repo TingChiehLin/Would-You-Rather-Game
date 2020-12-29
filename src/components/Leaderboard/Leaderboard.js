@@ -5,14 +5,10 @@ import './Leaderboard.scss';
 
 import TableCell from '../TableCell/TableCell';
 
-import { login_result } from '../../store/action';
+import { user_result } from '../../store/action';
 import { connect } from 'react-redux';
 
 function Leaderboard(props) {
-
-    // useEffect(()=> {
-    //     props.loadUsers()
-    // })
 
     const {userInfo} = props;
     const userDestails = Object.values(userInfo);
@@ -68,7 +64,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadUsers: () => dispatch(login_result())
+        loadUsers: () => dispatch(user_result())
     }
 }
 

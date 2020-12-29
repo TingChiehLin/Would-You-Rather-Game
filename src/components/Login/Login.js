@@ -5,7 +5,7 @@ import '../../utils/utility.scss';
 import User from '../../components/User/User';
 //import * as actionType from '../../store/action/actions';
 //Action Creator
-import { login_result, set_userstate } from '../../store/action';
+import { user_result, set_userstate } from '../../store/action';
 import { connect } from 'react-redux';
 
 class Login extends Component {
@@ -79,7 +79,7 @@ const mapDispatchToProps = dispatch => {
         // onLoginResult: ()=> dispatch({type: actionType.LOGIN_RESULT}),
 
         //Action Creator
-        onLoginResult: () => dispatch(login_result()),
+        onLoginResult: () => dispatch(user_result()),
         Update_userstate: (userID) => dispatch(set_userstate(userID))
     };  
 };

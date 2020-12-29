@@ -1,13 +1,21 @@
-import React,{ useEffect } from 'react'
+import React,{ useState, useEffect } from 'react'
 import './Home.scss';
 
 import Page from '../Page/Page';
 import SwitchQuestion from '../SwitchQuestion/SwitchQuestion';
 
-import { Switch, Route } from 'react-router-dom';
+import { saveQuestion, saveAnswer} from '../../store/action'; 
 import { connect } from 'react-redux';
 
-function Home() {
+function Home(props) {
+
+    const {sortedQuestions} = props
+    console.log("sortedQuestions: ",sortedQuestions)
+
+    useEffect(() => {
+        // props.loadQuestion({});
+        // props.loadAnswer({});
+    })
 
     return (
         <div className="home-container">
@@ -17,4 +25,20 @@ function Home() {
     )
 }
 
-export default Home
+const mapStateToProps = state => {
+    return {
+        question: state.questions.question,
+        answer: state.questions.answer
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        loadQuestion: () => dispatch(saveQuestion()),
+        loadAnswer: () => dispatch(saveAnswer())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
+
+

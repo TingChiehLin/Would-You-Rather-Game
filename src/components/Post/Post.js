@@ -23,11 +23,14 @@ function Post(props) {
                 <div className="post-container-question-title">Which developer will you become?</div>
                 <form action="" className="post-container-question-option">
                     {/* <input type="radio" value="be a Python developer">  */}
-                    <input className="input-radio-size" type="radio" id="dewey" name="drone" value="dewey"/>
-                    <label htmlFor="">be a Python developer</label>
-                    {/* <input type="radio" value="be a React developer">be a React developer */}
-                    <input className="input-radio-size" type="radio" id="dewey" name="drone" value="dewey"/>
-                    <label htmlFor="">be a React developer</label>
+                    <div className="post-container-question-option-center">
+                        <input className="input-radio-size" type="radio" id="dewey" name="drone" value="dewey"/>
+                        <label htmlFor="">be a Python developer</label>
+                    </div>
+                    <div className="post-container-question-option-center">
+                        <input className="input-radio-size" type="radio" id="dewey" name="drone" value="dewey"/>
+                        <label htmlFor="">be a React developer</label>
+                    </div>
                 </form>
             </div>
 

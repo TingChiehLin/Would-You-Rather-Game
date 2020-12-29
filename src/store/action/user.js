@@ -10,7 +10,6 @@ export const showResult = async () =>  {
     return {
         type: actionType.LOGIN_RESULT,
         result: updateResult
-        //updateResult
     };
 }
 
@@ -21,7 +20,7 @@ export const set_userstate = (userID) => {
     };
 };
 
-export const login_result = (res) => {
+export const user_result = (res) => {
     //thunk -> return a function
     return async dispatch => {
         dispatch(showLoading())

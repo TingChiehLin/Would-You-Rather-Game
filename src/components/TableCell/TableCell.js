@@ -6,7 +6,7 @@ function TableCell(props) {
     const {key, score, userName, userAvatarUrl, answerQuestion, createQuestion} = props;
 
     return (
-        <tr>
+        <tr key={key}>
             <td>
                 <span className="content-table-badge">{score}</span>
             </td>

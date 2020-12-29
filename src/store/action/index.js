@@ -1,10 +1,11 @@
 export {
-    login_result,
+    user_result,
     set_userstate
 } from './user';
 
 export {
-    question_result,
-    create_question
+    getQuestion_result,
+    saveQuestion,
+    saveAnswer
 } from './question';
 

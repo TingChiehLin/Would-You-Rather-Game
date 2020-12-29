@@ -1,24 +1,42 @@
 import * as actionType from './actionsType';
-import { _getQuestions }  from '../../utils/_DATA';
+import { _getQuestions, _saveQuestion, _saveQuestionAnswer }  from '../../utils/_DATA';
 import { hideLoading, showLoading } from 'react-redux-loading';
-
+import { user_result } from './user';
 
 //Action Creator
 const showResult = (questions) => ({
-        type: actionType.GET_QUESTION,
+        type: actionType.SAVE_QUESTION,
         questions
 })
 
-export const question_result = () => {
+const showAnswer_Result = (answers) => ({
+        type: actionType.SAVE_ANSWER,
+        answers
+})
+
+//Middleware
+export const getQuestion_result = () => {
     return async dispatch => {
         const questions = await _getQuestions();
+        dispatch(showLoading())
         dispatch(showResult(questions))
+        dispatch(hideLoading())
     }
 }
 
-export const create_question = (message) => {
-    return {
-        type: actionType.CREATE_QUESTIONS,
-        message: message
-    };
+export const saveQuestion = ({author, optionOneText, optionTwoText}) => {
+    return async dispatch => {
+        const questions = await _saveQuestion({author, optionOneText, optionTwoText});
+        dispatch(getQuestion_result(questions))
+        dispatch(user_result())
+    }
 }
+
+export const saveAnswer = ({author, qid, answer}) => {
+    return async dispatch => {
+        const answers = await _saveQuestionAnswer({author, qid, answer});
+        dispatch(showAnswer_Result(answers))
+        dispatch(user_result())
+    }
+}
+
