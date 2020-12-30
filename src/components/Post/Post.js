@@ -20,6 +20,9 @@ function Post(props) {
 
             <div className="post-container-question">
                 <h3>Would you rather?</h3>
+                <div className="post-container-question-time">
+                    <div>time</div>
+                </div>
                 <div className="post-container-question-title">Which developer will you become?</div>
                 <form action="" className="post-container-question-option">
                     {/* <input type="radio" value="be a Python developer">  */}

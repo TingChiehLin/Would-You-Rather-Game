@@ -42,6 +42,13 @@ $btnColor: #02253a;
         gap: 2rem;
         margin-bottom: 3rem;
         z-index: 20;
+        
+        .post-container-question-time {
+            position: absolute;
+            left:20px; 
+            top:150px;
+        }
+
         .post-container-question-option {
             display: flex;
             gap:2rem;

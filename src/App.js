@@ -14,7 +14,7 @@ import NoMatch from './components/NoMatch/NoMatch';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import { connect } from 'react-redux';
-import { user_result } from './store/action';
+import { user_result, getQuestion_result} from './store/action';
 
 import {
   CSSTransition
@@ -26,7 +26,10 @@ function App(props) {
 
   useEffect(() => {
     props.loadUsers();
-  })
+    props.loadQuestions();
+  },[])
+
+  console.log("getQuestion_result: ", props.loadQuestions())
 
   return (
     <React.Fragment>
@@ -74,7 +77,8 @@ export default connect(
   (state) => ({
     authedUser: state.users.authedUser
   }),{
-    loadUsers: user_result
+    loadUsers: user_result,
+    loadQuestions: getQuestion_result
   }
 )(App);
 
