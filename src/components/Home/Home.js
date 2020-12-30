@@ -4,16 +4,16 @@ import './Home.scss';
 import Page from '../Page/Page';
 import SwitchQuestion from '../SwitchQuestion/SwitchQuestion';
 
-import { saveQuestion, saveAnswer} from '../../store/action'; 
+import { getQuestion_result} from '../../store/action'; 
 import { connect } from 'react-redux';
 
 function Home(props) {
     
     useEffect(() => {
-        props.loadQuestion({});
-        props.loadAnswer({});
+        props.loadQuestion();
     })
-    console.log("sortedQuestions: ",props.question)
+
+    console.log("getQuestion_result: ",props.question)
     return (
         <div className="home-container">
             <SwitchQuestion/>
@@ -31,8 +31,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        loadQuestion: () => dispatch(saveQuestion()),
-        loadAnswer: () => dispatch(saveAnswer())
+        loadQuestion: () => dispatch(getQuestion_result())
     }
 }
 
