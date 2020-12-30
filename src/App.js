@@ -29,7 +29,7 @@ function App(props) {
     props.loadQuestions();
   },[])
 
-  console.log("getQuestion_result: ", props.loadQuestions())
+  console.log("getQuestion_result: ", props.questions)
 
   return (
     <React.Fragment>
@@ -75,7 +75,8 @@ function App(props) {
 
 export default connect(
   (state) => ({
-    authedUser: state.users.authedUser
+    authedUser: state.users.authedUser,
+    questions: state.questions.questions
   }),{
     loadUsers: user_result,
     loadQuestions: getQuestion_result
