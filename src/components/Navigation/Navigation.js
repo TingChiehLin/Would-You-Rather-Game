@@ -44,19 +44,16 @@ const Navigation = (props) => {
                         <span className="marginLeft">Ask Question</span>
                     </Link>
                 </div>
-                <div className="profile">
+                <div className="profile" >
                     <img className="profile-image" src={`${userDetails.avatarURL}`}/>
                     <div className="navigation-name">
                         {userDetails.name}
                     </div>
+                    <ul className="profile-dropdown-menu">
+                        <li><Link to="" className="blue">Source Code</Link></li>
+                        <li>Log Out</li>
+                    </ul>
                 </div>
-                {/* <ul>
-                    <li>Source Code</li>
-                    <li>
-                        <VscSignOut/>
-                        Log Out
-                    </li>
-                </ul> */}
             </div>
         </div>
     )

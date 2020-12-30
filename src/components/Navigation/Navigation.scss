@@ -51,11 +51,10 @@
     flex-direction: column;
     gap: 0.3rem;
     cursor: pointer;
-    // position: absolute;
-    // right: 3rem;
     font-size: 0.7rem;
     color: white;
     margin-right: 3rem;
+    position: relative;
 
     .profile-image {
         border-radius: 50%;
@@ -67,20 +66,45 @@
     .navigation-name {
         color: white;
     }
+
+    .profile-dropdown-menu {
+        position: absolute;
+        top: 0;
+        height: 100px;
+        width: 80px;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        line-height: 30px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        overflow: hidden;
+        cursor: pointer;
+        //opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.4s ease;
+
+        ul li {
+            &:hover {
+                color:red;
+            }
+        }
+
+        &:hover {
+            opacity: 1;
+            pointer-events: all;
+            transform: translate(0px);
+        }
+    }
 }
 
-ul {
-    list-style-type: none;
-    font-size: 12px;
-    margin-right: 40px;
-    line-height: 30px;
-
-    &::after {
-        content: '';
-       
-    }
+.blue {
+    color: rgb(37, 211, 255);
 }
 
 .marginLeft {
     margin-left: 0.5rem;
 }
+
