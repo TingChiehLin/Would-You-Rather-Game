@@ -67,8 +67,8 @@
     .profile-dropdown-menu {
         position: absolute;
         top: 100%;
+        width: auto;
         height: auto;
-        width: 80px;
         background-color: white;
         display: flex;
         justify-content: center;
@@ -84,7 +84,10 @@
         transform: translateY(-10px);
         transition: all 0.4s ease;
         margin-top: 0;
+        padding:0;
+
         li {
+            width: 100px;
             height: 50px;
             color: #02253a;
         }

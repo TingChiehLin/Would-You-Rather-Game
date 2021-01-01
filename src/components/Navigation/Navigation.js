@@ -48,11 +48,11 @@ const Navigation = (props) => {
           <div className="navigation-name">{userDetails.name}</div>
           <ul className="profile-dropdown-menu">
             <li>
-              <Link to="https://github.com/TingChiehLin/would-you-rather-game">
+              <a href="https://github.com/TingChiehLin/would-you-rather-game">
                 Source Code
-              </Link>
+              </a>
             </li>
-            <li>Log Out</li>
+            <li onClick={() => {}}>Log Out</li>
           </ul>
         </div>
       </div>
