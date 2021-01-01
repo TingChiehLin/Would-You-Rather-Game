@@ -3,10 +3,10 @@ import './TableCell.scss';
 
 function TableCell(props) {
 
-    const {key, score, userName, userAvatarUrl, answerQuestion, createQuestion} = props;
+    const {score, userName, userAvatarUrl, answerQuestion, createQuestion} = props;
 
     return (
-        <tr key={key}>
+        <tr>
             <td>
                 <span className="content-table-badge">{score}</span>
             </td>
