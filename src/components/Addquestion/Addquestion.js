@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Addquestion.scss';
 import { Link } from 'react-router-dom';
-import Post from '../Post/Post';
+import Post from '../QuestionCard/QuestionCard';
 
 function Addquestion() {
 

@@ -8,7 +8,6 @@ The app is to let players to poll and vote. A user can login to choose one of us
 * JavaScript (ES6)
 * HTML5
 * CSS
-* Responsive Design
 * React & Redux
 
 ## API 

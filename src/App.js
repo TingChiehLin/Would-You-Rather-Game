@@ -29,7 +29,6 @@ function App(props) {
     props.loadQuestions();
   },[])
 
-  console.log("getQuestion_result: ", props.questions)
 
   return (
     <React.Fragment>

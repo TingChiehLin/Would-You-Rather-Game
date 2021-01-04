@@ -8,12 +8,18 @@ import { FcStatistics } from "react-icons/fc";
 import { FcQuestions } from "react-icons/fc";
 import { VscSignOut } from "react-icons/vsc";
 
-import { user_result } from "../../store/action";
+import { user_result, set_userstate } from "../../store/action";
 import { connect } from "react-redux";
 
 const Navigation = (props) => {
   const { userInfo, authedUser } = props;
   const userDetails = userInfo[authedUser];
+  const [UserID, setUserID] = useState('')
+
+  const LogOut = () => {
+      setUserID('');
+      props.Update_userstate(UserID);
+  }
 
   return (
     <div>
@@ -47,12 +53,20 @@ const Navigation = (props) => {
           <img className="profile-image" src={`${userDetails.avatarURL}`} />
           <div className="navigation-name">{userDetails.name}</div>
           <ul className="profile-dropdown-menu">
-            <li>
-              <a href="https://github.com/TingChiehLin/would-you-rather-game">
+            <li className="center">
+              <a
+                target="_blank"
+                className="black"
+                href="https://github.com/TingChiehLin/would-you-rather-game"
+              >
                 Source Code
               </a>
             </li>
-            <li onClick={() => {}}>Log Out</li>
+            <Link to="">
+            <li className="center" onClick={LogOut}>
+                Log Out
+            </li>
+            </Link>
           </ul>
         </div>
       </div>
@@ -70,6 +84,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     loadUsers: () => dispatch(user_result()),
+    Update_userstate: (userID) => dispatch(set_userstate(userID))
   };
 };
 
