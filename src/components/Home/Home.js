@@ -10,14 +10,24 @@ function Home(props) {
 
   const [selectedTab, setSelecTedTab] = useState("answered")
 
-    // const selectedQuestion = Object.values(props.question);
-    // const filteredQuestions = selectedQuestion.filter((selectedQuestion) => 
-    // selectedQuestion.id === 'answered' ? '' : '')
-    const filteredQuestions = []
+  const userDetails = props.userInfo[props.authedUser];
+
+  const selectedQuestions = Object.values(props.question);
+
+  const answeredQuestions = selectedQuestions.filter((q) => {
+    return userDetails.answers[q.id];
+  })
+  const unansweredQuestions = selectedQuestions.filter((q) => {
+    return !userDetails.answers[q.id];
+  })
+
   return (
     <div className="home-container">
       <SwitchQuestion setSelecTedTab={setSelecTedTab}/>
-      <QuestionContainer questions={filteredQuestions}/>
+      <QuestionContainer key={props.authedUser} questions={selectedTab === 'answered' ? 
+        answeredQuestions 
+        : unansweredQuestions
+    }/>
     </div>
   );
 }
@@ -26,6 +36,8 @@ const mapStateToProps = (state) => {
   return {
     question: state.questions.question,
     answer: state.questions.answer,
+    authedUser: state.users.authedUser,
+    userInfo: state.users.result,
   };
 };
 
