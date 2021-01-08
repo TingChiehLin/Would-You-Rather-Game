@@ -11,7 +11,6 @@ function Home(props) {
   const [selectedTab, setSelecTedTab] = useState("answered")
 
   const userDetails = props.userInfo[props.authedUser];
-
   const selectedQuestions = Object.values(props.question);
 
   const answeredQuestions = selectedQuestions.filter((q) => {
