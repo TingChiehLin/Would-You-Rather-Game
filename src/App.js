@@ -45,7 +45,7 @@ function App(props) {
           <Route path='/' exact component={Home}/>
           <Route path='/leaderboard' exact component={Leaderboard}/>
           <Route path='/addquestion' exact component={Addquestion}/>
-          <Route path='/questions/:question_id' exact component={Addquestion}/>
+          <Route path='/questions/question_id' exact component={Addquestion}/>
           <Route path="*">
             <NoMatch />
           </Route>

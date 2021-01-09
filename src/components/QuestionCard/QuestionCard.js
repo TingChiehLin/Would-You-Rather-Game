@@ -34,24 +34,25 @@ function QuestionCard(props) {
                 </div>
             <div className="post-container-question-title">Which developer will you become?</div>
             
-            <div action="" className="post-container-question-option" onClick={saveUserAnswer   }>
+            <div action="" className="post-container-question-option" onClick={saveUserAnswer}>
                 <div className="post-container-question-option-center">
                     <input className="input-radio-size" type="radio" value="optionOne"
                         checked={optionSelected==="optionOne"}
-                        onClick={() => setOptionSelected("optionOne")}
+                        onChange={() => setOptionSelected("optionOne")}
                     />
                     <label htmlFor="">be a Python developer</label>
                 </div>
                 <div className="post-container-question-option-center">
                     <input className="input-radio-size" type="radio" name="drone" value="optionTwo"
                         checked={optionSelected==="optionTwo"}
-                        onClick={() => setOptionSelected("optionTwo")}
+                        onChange={() => setOptionSelected("optionTwo")
+                    }
                     />
                     <label htmlFor="">be a React developer</label>
                 </div>
             </div>
             </div>
-            <Link to={`${id}`}>
+            <Link to={`/questions/${id}`}> 
             <button className="post-btn">
                 <div className="center">
                     <IconContext.Provider value={{size:'2rem'}}>

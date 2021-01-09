@@ -23,7 +23,7 @@ function Home(props) {
   return (
     <div className="home-container">
       <SwitchQuestion setSelecTedTab={setSelecTedTab}/>
-      <QuestionContainer key={props.authedUser} questions={selectedTab === 'answered' ? 
+      <QuestionContainer questions={selectedTab === 'answered' ? 
         answeredQuestions 
         : unansweredQuestions
     }/>
