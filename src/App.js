@@ -8,7 +8,7 @@ import LoadingBar from 'react-redux-loading-bar'
 import Home from './components/Home/Home';
 import Addquestion from './components/Addquestion/Addquestion';
 import Leaderboard from './components/Leaderboard/Leaderboard';
-import AnswerQuestion from './components/Addquestion/Addquestion';
+import AnswerQuestion from './components/AnswerQuestion/AnswerQuestion';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 import NoMatch from './components/NoMatch/NoMatch';
@@ -46,7 +46,7 @@ function App(props) {
           <Route path='/' exact component={Home}/>
           <Route path='/leaderboard' exact component={Leaderboard}/>
           <Route path='/addquestion' exact component={Addquestion}/>
-          <Route path='/questions/:question_id' exact children={AnswerQuestion}/>
+          <Route path='/questions/:question_id' exact children={<AnswerQuestion/>}/>
           <Route path="*">
             <NoMatch />
           </Route>

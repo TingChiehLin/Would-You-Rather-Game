@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 function Home(props) {
 
-  const [selectedTab, setSelecTedTab] = useState("answered")
+  const [selectedTab, setSelecTedTab] = useState("unanswered")
 
   const userDetails = props.userInfo[props.authedUser];
   const selectedQuestions = Object.values(props.question);
