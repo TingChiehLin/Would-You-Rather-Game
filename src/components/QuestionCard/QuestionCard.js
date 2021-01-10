@@ -8,8 +8,8 @@ import './QuestionCard.scss';
 import { connect } from 'react-redux';
 
 function QuestionCard(props) {
-    const {id, author} = props.question;
-
+    const {id, author, timestamp} = props.question;
+    const date = new Date(timestamp)
     return (
         <div className="post-container" >
             <div className="post-container-intro">
@@ -24,7 +24,7 @@ function QuestionCard(props) {
             <div className="post-container-question">
                 <h3>Would you rather?</h3>
                 <div className="post-container-question-time">
-                    <div>time{}</div>
+                    <div>{date}</div>
                 </div>
             <div className="post-container-question-title">Which developer will you become?</div>
             </div>
@@ -32,7 +32,7 @@ function QuestionCard(props) {
             <Link to={`/questions/${id}`}> 
                 <button className="post-btn">
                     <div className="center">
-                        <IconContext.Provider value={{size:'2rem', className:'white'}}>
+                        <IconContext.Provider value={{size:'2rem'}}>
                             <FcAnswers/>
                         </IconContext.Provider>
                         <span className="marginLeft">Answer</span>

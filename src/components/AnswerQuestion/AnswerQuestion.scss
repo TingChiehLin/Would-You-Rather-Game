@@ -1,13 +1,22 @@
 $btnColor: #02253a;
 
 .answer_container {
+    width: 50rem;
+    height: 25rem;
+    background-color: #f5faff;
+    box-shadow: 0 0 20px rgba(0,0,0, 0.15);
+
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
     .post-container-question-option {
-        margin-top: 5rem;
         display: flex;
         gap:2rem;
         .post-container-question-option-center {
@@ -25,10 +34,6 @@ $btnColor: #02253a;
         outline: 0;
         border: 0;
         cursor: pointer;
-        position: absolute;
-        bottom:3rem;
-        left:50%;
-        transform: translate(-50%);
         border-radius: 30px;
         z-index: 10;
         &:hover {

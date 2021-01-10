@@ -14,6 +14,7 @@ const AnswerQuestion = (props) => {
 
     const saveUserAnswer = () => {
         saveAnswer({})
+        
     }
 
     return (
@@ -38,7 +39,7 @@ const AnswerQuestion = (props) => {
             </div>
             <button className="post-btn">
                 <div className="center">
-                    <IconContext.Provider value={{size:'2rem'}}>
+                    <IconContext.Provider value={{size:'2rem', className:'white'}}>
                         <FcUp/>
                     </IconContext.Provider>
                     <span className="marginLeft">Submit</span>
