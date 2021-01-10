@@ -23,7 +23,7 @@ import {
 
 function App(props) {
 
-  const [authedUser, setAuthedUser] = useState("");
+  // const [authedUser, setAuthedUser] = useState("");
 
   useEffect(() => {
     props.loadUsers();

@@ -8,15 +8,19 @@ import './QuestionCard.scss';
 import { connect } from 'react-redux';
 
 function QuestionCard(props) {
-    const {id, author, timestamp} = props.question;
+    const { id, timestamp, author } = props.question;
+    const {userInfo} = props;
+    const userDetails = userInfo[id];
     const date = new Date(timestamp)
+
+    // <img className="profile-image" src={`${userDetails.avatarURL}`} />
     return (
         <div className="post-container" >
             <div className="post-container-intro">
                 <div className="post-container-intro-name">Leonardo DiCaprio</div>
                 <img 
-                    src=""
-                    alt=""
+                    src={`${userDetails.avatarURL}`}
+                    alt={`${userDetails.avatarURL}`}
                     className="post-profile-image"
             />
             </div>
@@ -24,7 +28,8 @@ function QuestionCard(props) {
             <div className="post-container-question">
                 <h3>Would you rather?</h3>
                 <div className="post-container-question-time">
-                    <div>{date}</div>
+                    {/* <div>{date}</div> */}
+                    <div>{}</div>
                 </div>
             <div className="post-container-question-title">Which developer will you become?</div>
             </div>
@@ -43,5 +48,12 @@ function QuestionCard(props) {
     )
 }
 
-export default QuestionCard
+const mapStateToProps = (state) => {
+    return {
+        useInfo: state.users.result,
+        authedUser: state.users.authedUser,
+    };
+};
+
+export default connect(mapStateToProps)(QuestionCard);
 
