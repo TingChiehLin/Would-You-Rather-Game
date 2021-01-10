@@ -27,7 +27,7 @@ $btnColor: #02253a;
         }
     }    
     .post-btn {
-        padding:0.3rem 7rem;
+        padding:0.5rem 7rem;
         color: white;
         background-color: $btnColor;
         font-weight: 500;
@@ -40,9 +40,7 @@ $btnColor: #02253a;
             background-color: #033a5c;
         }
     }
-}
-
-
-.white {
-    background-color: white;
+    .post-btn g {
+        fill: white;
+    }
 }

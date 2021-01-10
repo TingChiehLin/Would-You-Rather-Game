@@ -14,7 +14,7 @@ const AnswerQuestion = (props) => {
 
     const saveUserAnswer = () => {
         saveAnswer({})
-        
+
     }
 
     return (
@@ -39,7 +39,7 @@ const AnswerQuestion = (props) => {
             </div>
             <button className="post-btn">
                 <div className="center">
-                    <IconContext.Provider value={{size:'2rem', className:'white'}}>
+                    <IconContext.Provider value={{size:'1.5rem', className:'white'}}>
                         <FcUp/>
                     </IconContext.Provider>
                     <span className="marginLeft">Submit</span>
@@ -62,3 +62,22 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default AnswerQuestion
+
+
+    // export const saveQuestion = ({author, optionOneText, optionTwoText}) => {
+    //     return async dispatch => {
+    //         const questions = await _saveQuestion({author, optionOneText, optionTwoText});
+    //         dispatch(getQuestion_result(questions))
+    //         dispatch(user_result())
+    //     }
+    // }
+    
+    // export const saveAnswer = ({author, qid, answer}) => {
+
+        // const question = dispatch(
+        //     savingQuestion({
+        //       optionOneText: e.target.inputone.value,
+        //       optionTwoText: e.target.inputtwo.value,
+        //       author: user,
+        //     })
+        //   );
