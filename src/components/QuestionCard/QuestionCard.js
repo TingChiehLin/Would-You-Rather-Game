@@ -30,27 +30,10 @@ function QuestionCard(props) {
             <div className="post-container-question">
                 <h3>Would you rather?</h3>
                 <div className="post-container-question-time">
-                    <div>time</div>
+                    <div>time{}</div>
                 </div>
             <div className="post-container-question-title">Which developer will you become?</div>
             
-            <div action="" className="post-container-question-option" onClick={saveUserAnswer}>
-                <div className="post-container-question-option-center">
-                    <input className="input-radio-size" type="radio" value="optionOne"
-                        checked={optionSelected==="optionOne"}
-                        onChange={() => setOptionSelected("optionOne")}
-                    />
-                    <label htmlFor="">be a Python developer</label>
-                </div>
-                <div className="post-container-question-option-center">
-                    <input className="input-radio-size" type="radio" name="drone" value="optionTwo"
-                        checked={optionSelected==="optionTwo"}
-                        onChange={() => setOptionSelected("optionTwo")
-                    }
-                    />
-                    <label htmlFor="">be a React developer</label>
-                </div>
-            </div>
             </div>
             <Link to={`/questions/${id}`}> 
             <button className="post-btn">

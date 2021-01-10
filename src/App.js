@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch, useParams} from 'react-router-dom';
 
 import './App.css';
 import Login from './components/Login/Login';
@@ -8,6 +8,7 @@ import LoadingBar from 'react-redux-loading-bar'
 import Home from './components/Home/Home';
 import Addquestion from './components/Addquestion/Addquestion';
 import Leaderboard from './components/Leaderboard/Leaderboard';
+import AnswerQuestion from './components/Addquestion/Addquestion';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 import NoMatch from './components/NoMatch/NoMatch';
@@ -45,7 +46,7 @@ function App(props) {
           <Route path='/' exact component={Home}/>
           <Route path='/leaderboard' exact component={Leaderboard}/>
           <Route path='/addquestion' exact component={Addquestion}/>
-          <Route path='/questions/question_id' exact component={Addquestion}/>
+          <Route path='/questions/:question_id' exact children={AnswerQuestion}/>
           <Route path="*">
             <NoMatch />
           </Route>
@@ -70,7 +71,6 @@ function App(props) {
     </React.Fragment>
   );
 }
-
 
 export default connect(
   (state) => ({

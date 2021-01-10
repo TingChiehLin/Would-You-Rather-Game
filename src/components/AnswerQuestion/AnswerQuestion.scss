@@ -1,0 +1,10 @@
+.post-container-question-option {
+    display: flex;
+    gap:2rem;
+    .post-container-question-option-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
+    }
+}
