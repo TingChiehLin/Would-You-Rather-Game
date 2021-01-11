@@ -40,3 +40,10 @@ export const saveAnswer = ({author, qid, answer}) => {
     }
 }
 
+// export const saveAnswer = ({author, qid, answer}) => {
+//     return async dispatch => {
+//         const answers = await _saveQuestionAnswer({author, qid, answer});
+//         dispatch(showAnswer_Result(answers))
+//         dispatch(user_result())
+//     }
+// }

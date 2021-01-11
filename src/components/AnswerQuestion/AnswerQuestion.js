@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
 import { IconContext } from 'react-icons';
 import { FcUp } from 'react-icons/fc';
 import '../../utils/utility.scss';
 import './AnswerQuestion.scss';
-
 import { connect } from 'react-redux';
-import {saveAnswer} from '../../store/action/question';
+import { saveAnswer } from '../../store/action/question';
+import { useParams } from 'react-router-dom'
 
 const AnswerQuestion = (props) => {
     const { question_id } = useParams()
@@ -14,13 +13,12 @@ const AnswerQuestion = (props) => {
 
     const saveUserAnswer = () => {
         saveAnswer({})
-
     }
 
     return (
         <div className="answer_container">
             <h1>Would you rather ?</h1>
-            <div action="" className="post-container-question-option" onClick={saveUserAnswer}>
+            <form action="" className="post-container-question-option" onClick={saveUserAnswer}>
                 <div className="post-container-question-option-center">
                     <input className="input-radio-size" type="radio" value="optionOne"
                         checked={optionSelected==="optionOne"}
@@ -36,7 +34,7 @@ const AnswerQuestion = (props) => {
                     />
                     <label htmlFor="">be a React developer</label>
                 </div>
-            </div>
+            </form>
             <button className="post-btn">
                 <div className="center">
                     <IconContext.Provider value={{size:'1.5rem', className:'white'}}>
@@ -61,7 +59,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default AnswerQuestion
+export default connect(mapStateToProps,mapDispatchToProps)(AnswerQuestion)
 
 
     // export const saveQuestion = ({author, optionOneText, optionTwoText}) => {

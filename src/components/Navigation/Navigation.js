@@ -24,7 +24,7 @@ const Navigation = (props) => {
   return (
     <div>
       <div className="navigation-container">
-        <Link to="./" className="navigation-logo">
+        <Link to="/" className="navigation-logo">
           <div className="logo">
             <img className="navigation-image" src="./logo.svg" alt="logo" />
           </div>
