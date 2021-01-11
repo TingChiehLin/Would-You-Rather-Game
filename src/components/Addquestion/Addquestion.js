@@ -23,14 +23,6 @@ function Addquestion(props) {
         props.saveQuestion({userDetails,optionAText,optionBText})
     }
 
-    // export const saveQuestion = ({author, optionOneText, optionTwoText}) => {
-    //     return async dispatch => {
-    //         const questions = await _saveQuestion({author, optionOneText, optionTwoText});
-    //         dispatch(getQuestion_result(questions))
-    //         dispatch(user_result())
-    //     }
-    // }
-
     return (
         <form className="askquestion-container">
             <div className="askquestion-container-title">Create a new question</div>

@@ -12,12 +12,15 @@ function QuestionCard(props) {
     const userDetails = props.userInfo[author];
     const date = new Date(timestamp);
     const formatter = new Intl.DateTimeFormat(
-        'en-AU', { year: 'numeric', month: 'numeric', day: 'numeric', timeZone: 'UTC' 
+        'en-AU', { 
+        year: 'numeric', 
+        month: 'numeric',
+        day: 'numeric', 
+        timeZone: 'UTC' 
     });
     // .toLocaleString();
     const formatterData = formatter.formatToParts(date);
-    console.log(formatterData);
-    
+
     return (
         <div className="post-container" >
             <div className="post-container-intro">
@@ -32,7 +35,11 @@ function QuestionCard(props) {
             <div className="post-container-question">
                 <h3>Would you rather?</h3>
                 <div className="post-container-question-time">
-                    {/* <div>{date}</div> */}
+                    {
+                        formatterData.map(({value}, index) => {
+                           return <span className="date-margin-right" key={index}>{value}</span>
+                        })
+                    }
                 </div>
             <div className="post-container-question-title">{`... ${optionOne.text.substring(0,20)} ?`}</div>
             </div>
