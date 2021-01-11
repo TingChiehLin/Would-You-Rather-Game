@@ -20,19 +20,19 @@ function Addquestion(props) {
     }
 
     const saveUserQuestion = () => {
-        saveQuestion({userDetails,optionAText,optionBText})
+        props.saveQuestion({userDetails,optionAText,optionBText})
     }
 
     // export const saveQuestion = ({author, optionOneText, optionTwoText}) => {
-//     return async dispatch => {
-//         const questions = await _saveQuestion({author, optionOneText, optionTwoText});
-//         dispatch(getQuestion_result(questions))
-//         dispatch(user_result())
-//     }
-// }
+    //     return async dispatch => {
+    //         const questions = await _saveQuestion({author, optionOneText, optionTwoText});
+    //         dispatch(getQuestion_result(questions))
+    //         dispatch(user_result())
+    //     }
+    // }
 
     return (
-        <form className="askquestion-container" onClick={saveUserQuestion}>
+        <form className="askquestion-container">
             <div className="askquestion-container-title">Create a new question</div>
             <div className="askquestion-container-content">
                 <div className="askquestion-container-subtitle">Would you rather?</div>
@@ -50,7 +50,7 @@ function Addquestion(props) {
                  value={optionBText}
                  onChange={textBChangeHandler}
                 />
-                <Link to="/">
+                <Link to="/" onClick={saveUserQuestion}>
                     <button className="askquestion-container-btn">Sumbit</button>
                 </Link>
             </div>
@@ -67,7 +67,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        saveQuestion: () => dispatch(saveQuestion())
+        saveQuestion: (question) => dispatch(saveQuestion(question))
     }
 }
 

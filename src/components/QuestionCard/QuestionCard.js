@@ -10,7 +10,13 @@ import { connect } from 'react-redux';
 function QuestionCard(props) {
     const { id, timestamp, author, optionOne } = props.question;
     const userDetails = props.userInfo[author];
-    const date = new Date(timestamp).toLocaleString('en-AU', { year: 'numeric', month: 'numeric', day: 'numeric', timeZone: 'UTC' });
+    const date = new Date(timestamp);
+    const formatter = new Intl.DateTimeFormat(
+        'en-AU', { year: 'numeric', month: 'numeric', day: 'numeric', timeZone: 'UTC' 
+    });
+    // .toLocaleString();
+    const formatterData = formatter.formatToParts(date);
+    console.log(formatterData);
     
     return (
         <div className="post-container" >
@@ -26,7 +32,7 @@ function QuestionCard(props) {
             <div className="post-container-question">
                 <h3>Would you rather?</h3>
                 <div className="post-container-question-time">
-                    <div>{date}</div>
+                    {/* <div>{date}</div> */}
                 </div>
             <div className="post-container-question-title">{`... ${optionOne.text.substring(0,20)} ?`}</div>
             </div>

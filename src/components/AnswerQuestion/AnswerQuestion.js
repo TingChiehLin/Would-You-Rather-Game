@@ -18,7 +18,7 @@ const AnswerQuestion = (props) => {
     return (
         <div className="answer_container">
             <h1>Would you rather ?</h1>
-            <form action="" className="post-container-question-option" onClick={saveUserAnswer}>
+            <form action="" className="post-container-question-option">
                 <div className="post-container-question-option-center">
                     <input className="input-radio-size" type="radio" value="optionOne"
                         checked={optionSelected==="optionOne"}
@@ -35,7 +35,7 @@ const AnswerQuestion = (props) => {
                     <label htmlFor="">be a React developer</label>
                 </div>
             </form>
-            <button className="post-btn">
+            <button className="post-btn" onClick={saveUserAnswer}>
                 <div className="center">
                     <IconContext.Provider value={{size:'1.5rem', className:'white'}}>
                         <FcUp/>
