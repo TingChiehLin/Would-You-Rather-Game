@@ -5,19 +5,23 @@ import '../../utils/utility.scss';
 import './AnswerQuestion.scss';
 import { connect } from 'react-redux';
 import { saveAnswer } from '../../store/action/question';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+
+import VoteResult from '../VoteResult/VoteResult';
 
 const AnswerQuestion = (props) => {
     const { question_id } = useParams()
     const [optionSelected, setOptionSelected] = useState('optionOne');
-
+    const [isSubmitted, setisSubmitted] = useState(false);
     const saveUserAnswer = () => {
         saveAnswer({})
+        setisSubmitted(true);
     }
-
+    
     return (
         <div className="answer_container">
-            <h1>Would you rather ?</h1>
+            {isSubmitted ? <VoteResult question={props.question}/>
+            : <><h1>Would you rather ?</h1>
             <form action="" className="post-container-question-option">
                 <div className="post-container-question-option-center">
                     <input className="input-radio-size" type="radio" value="optionOne"
@@ -29,8 +33,7 @@ const AnswerQuestion = (props) => {
                 <div className="post-container-question-option-center">
                     <input className="input-radio-size" type="radio" name="drone" value="optionTwo"
                         checked={optionSelected==="optionTwo"}
-                        onChange={() => setOptionSelected("optionTwo")
-                    }
+                        onChange={() => setOptionSelected("optionTwo")}
                     />
                     <label htmlFor="">be a React developer</label>
                 </div>
@@ -43,13 +46,14 @@ const AnswerQuestion = (props) => {
                     <span className="marginLeft">Submit</span>
                 </div>
             </button>
+            </>}
         </div>
     )
 }
 
 const mapStateToProps = state => {
     return {
-
+        question: state.questions.question
     }
 }
 

@@ -20,7 +20,11 @@ function Addquestion(props) {
     }
 
     const saveUserQuestion = () => {
-        props.saveQuestion({userDetails,optionAText,optionBText})
+        props.saveQuestion({
+            author: props.authedUser,
+            optionOneText: optionAText,
+            optionTwoText: optionBText,
+        })
     }
 
     return (
@@ -54,6 +58,7 @@ const mapStateToProps = state => {
     return {
         userInfo: state.users.result,
         authedUser: state.users.authedUser,
+        question: state.questions.question
     }
 }
 

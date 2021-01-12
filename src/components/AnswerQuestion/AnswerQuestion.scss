@@ -2,7 +2,7 @@ $btnColor: #02253a;
 
 .answer_container {
     width: 50rem;
-    height: 25rem;
+    height: 30rem;
     background-color: #f5faff;
     box-shadow: 0 0 20px rgba(0,0,0, 0.15);
 
@@ -15,10 +15,10 @@ $btnColor: #02253a;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 5rem;
+    gap: 8rem;
     .post-container-question-option {
         display: flex;
-        gap:2rem;
+        gap:3rem;
         .post-container-question-option-center {
             display: flex;
             justify-content: center;

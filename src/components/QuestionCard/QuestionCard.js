@@ -8,6 +8,7 @@ import './QuestionCard.scss';
 import { connect } from 'react-redux';
 
 function QuestionCard(props) {
+    console.log(props.question);
     const { id, timestamp, author, optionOne } = props.question;
     const userDetails = props.userInfo[author];
     const date = new Date(timestamp);
@@ -20,6 +21,7 @@ function QuestionCard(props) {
     });
     // .toLocaleString();
     const formatterData = formatter.formatToParts(date);
+    // const [isAnswered, setisAnswered] = useState(false);
 
     return (
         <div className="post-container" >
@@ -31,7 +33,7 @@ function QuestionCard(props) {
                     className="post-profile-image"
             />
             </div>
-
+            
             <div className="post-container-question">
                 <h3>Would you rather?</h3>
                 <div className="post-container-question-time">
@@ -41,9 +43,10 @@ function QuestionCard(props) {
                         })
                     }
                 </div>
-            <div className="post-container-question-title">{`... ${optionOne.text.substring(0,20)} ?`}</div>
-            </div>
+                <div className="post-container-question-title">{`... ${optionOne.text.substring(0,20)} ?`}</div>
 
+            </div>
+            
             <Link to={`/questions/${id}`}> 
                 <button className="post-btn">
                     <div className="center">
