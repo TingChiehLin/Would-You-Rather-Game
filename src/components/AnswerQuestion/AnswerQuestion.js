@@ -14,7 +14,11 @@ const AnswerQuestion = (props) => {
     const [optionSelected, setOptionSelected] = useState('optionOne');
     const [isSubmitted, setisSubmitted] = useState(false);
     const saveUserAnswer = () => {
-        saveAnswer({userDetails, question_id, questionAnswer1, questionAnswer2})
+        props.saveAnswer({
+            author: props.authedUser,
+            qid: question_id,
+            answer: optionSelected,
+        })
         setisSubmitted(true);
     }
 

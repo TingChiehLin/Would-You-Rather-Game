@@ -3,10 +3,10 @@ import './ProgressBar.scss';
 
 export default (props) => {
     const {value} = props;
-
+    console.log(value);
     return (
         <div className="progress-container">
-            <div style={{ width: `${value * 10}%` }}></div>
+            <div style={{ width: `${value}%`}}></div>
         </div>
     );
 }

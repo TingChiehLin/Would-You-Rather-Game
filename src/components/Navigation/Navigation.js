@@ -28,7 +28,7 @@ const Navigation = (props) => {
       <div className="navigation-container">
         <Link to="/" className="navigation-logo">
           <div className="logo">
-            <img className="navigation-image" src="./logo.svg" alt="logo" />
+            <img className="navigation-image" src="/logo.svg" alt="logo" />
           </div>
         </Link>
         <div className="navigation-items">

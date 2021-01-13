@@ -6,20 +6,16 @@ import { Link } from 'react-router-dom';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 function VoteResult(props) {
-    const { optionOne, optionTwo} = props.question;
-    console.log(optionOne);
-    // optionOne: {
-    //     votes: ['millajovovich'],
-    //     text: 'write JavaScript',
-    //   },
-    //   optionTwo: {
-    //     votes: ['leonardodicaprio'],
-    //     text: 'write Swift'
-    //   }
+    const { question_id } = useParams();
+    const { optionOne, optionTwo} = props.question[question_id];
 
-
+    const totalNumberOfOption1Vote = optionOne.votes.length;
+    const totalNumberOfOption2Vote = optionTwo.votes.length;
+    const totalPercent1 = Math.floor(totalNumberOfOption1Vote / 3 * 100);
+    const totalPercent2 = Math.floor(totalNumberOfOption2Vote / 3 * 100);
 
     return (
         <div className="voteResult-container">
@@ -28,22 +24,22 @@ function VoteResult(props) {
             </div>
             <div className="voteResult-value">
                 <div className="voteResult-percent">
-                    <div>67%</div>
-                    <div>2 out of 3 votes</div>
+                    <div>{`${totalPercent1} %`}</div>
+                    <div>{totalNumberOfOption1Vote} out of 3 votes</div>
                 </div>
-                <ProgressBar value={3}/>
+                <ProgressBar value={totalPercent1}/>
                 <div className="voteResult-question">{optionOne.text}</div>
             </div>
             <div className="voteResult-value">
                 <div className="voteResult-percent">
-                    <div>17%</div>
-                    <div>1 out of 3 votes</div>
+                    <div>{`${totalPercent2} %`}</div>
+                    <div>{totalNumberOfOption2Vote} out of 3 votes</div>
                 </div>
-                <ProgressBar value={1}/>
+                <ProgressBar value={totalPercent2}/>
                 <div className="voteResult-question">{optionTwo.text}</div>
             </div>
             <Link to="/">
-                <button className="post-btn" onClick={""}>
+                <button className="post-btn">
                     <div className="center">
                         <IconContext.Provider value={{size:'1.5rem', className:'white'}}>
                             <FcUpLeft/>
