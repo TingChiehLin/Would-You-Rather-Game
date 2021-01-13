@@ -1,2 +1,62 @@
 $lightColor: #ffffff;
 $blackColor: black;
+
+.toggle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        // &::checked {
+        //     transform: translateX(40px);
+
+        // }
+    }
+
+    .onoff {
+        display: block;
+        
+    }
+
+    .slider {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        background-color: #333;
+        transition: .4s;
+        width: 50px;
+        height: 30px;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            transition: 0.4s;
+            top:5px;
+            left:5px;
+            border-radius: 5px;
+        }
+    }
+
+    .round {
+        border-radius: 5px;
+    }
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #333;
+    transition: $blackColor 0.25s ease-out;
+}
+
+.dark-mode {
+    background-color: #1a1919;
+    color: #999;
+    transition: $blackColor 0.25s ease-out;
+}

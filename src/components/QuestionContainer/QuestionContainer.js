@@ -5,19 +5,13 @@ import { connect } from 'react-redux';
 
 function QuestionContainer(props) {
 
-    const { timestamp, author } = props.questions;
-    //const userDetails = props.userInfo[author];
-    console.log('props.questions:',props.questions);
-    console.log('timestamp:',timestamp);
     return (
         <div className="QuestionCard-container">
             {
-                props.questions.map((question) => {
-                    return {   
-                        ...question,
-                        timestamp
-                    };
-                }).sort((question1, question2) => (question2.timestamp - question1.timestamp)).map(question =>
+                props.questions
+                    .sort((question1, question2) => 
+                    (question2.timestamp - question1.timestamp))
+                .map(question =>
                     <QuestionCard key={question.id} question={question}/>
                 )
             }

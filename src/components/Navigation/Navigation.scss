@@ -68,7 +68,7 @@
         position: absolute;
         top: 100%;
         width: auto;
-        height: auto;
+        height: 160px;
         background-color: white;
         display: flex;
         justify-content: center;
@@ -86,8 +86,9 @@
         margin-top: 0;
         padding:0;
         text-align: center;
+        z-index: 30;
         li {
-            width: 100px;
+            width: 160px;
             height: 50px;
             color: #02253a;
         }

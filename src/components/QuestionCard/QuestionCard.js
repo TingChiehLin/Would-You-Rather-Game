@@ -8,7 +8,6 @@ import './QuestionCard.scss';
 import { connect } from 'react-redux';
 
 function QuestionCard(props) {
-    console.log(props.question);
     const { id, timestamp, author, optionOne } = props.question;
     const userDetails = props.userInfo[author];
     const date = new Date(timestamp);

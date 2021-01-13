@@ -17,7 +17,10 @@ const AnswerQuestion = (props) => {
         saveAnswer({})
         setisSubmitted(true);
     }
-    
+
+    const questionAnswer1 = props.question[question_id].optionOne.text;
+    const questionAnswer2 = props.question[question_id].optionTwo.text;
+
     return (
         <div className="answer_container">
             {isSubmitted ? <VoteResult question={props.question}/>
@@ -28,14 +31,14 @@ const AnswerQuestion = (props) => {
                         checked={optionSelected==="optionOne"}
                         onChange={() => setOptionSelected("optionOne")}
                     />
-                    <label htmlFor="">be a Python developer</label>
+                    <label htmlFor="">{questionAnswer1}</label>
                 </div>
                 <div className="post-container-question-option-center">
                     <input className="input-radio-size" type="radio" name="drone" value="optionTwo"
                         checked={optionSelected==="optionTwo"}
                         onChange={() => setOptionSelected("optionTwo")}
                     />
-                    <label htmlFor="">be a React developer</label>
+                    <label htmlFor="">{questionAnswer2}</label>
                 </div>
             </form>
             <button className="post-btn" onClick={saveUserAnswer}>

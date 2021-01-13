@@ -8,6 +8,8 @@ import { FcStatistics } from "react-icons/fc";
 import { FcQuestions } from "react-icons/fc";
 import { VscSignOut } from "react-icons/vsc";
 
+import SwitchDarkLight from '../SwitchDarkLight/SwitchDarkLight';
+
 import { user_result, set_userstate } from "../../store/action";
 import { connect } from "react-redux";
 
@@ -67,6 +69,9 @@ const Navigation = (props) => {
                 Log Out
             </li>
             </Link>
+            <li className="center">
+              <SwitchDarkLight/>
+            </li>
           </ul>
         </div>
       </div>
