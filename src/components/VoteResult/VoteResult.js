@@ -8,15 +8,22 @@ import ProgressBar from '../ProgressBar/ProgressBar';
 import { connect } from 'react-redux';
 
 function VoteResult(props) {
+    const { optionOne, optionTwo} = props.question;
+    console.log(optionOne);
+    // optionOne: {
+    //     votes: ['millajovovich'],
+    //     text: 'write JavaScript',
+    //   },
+    //   optionTwo: {
+    //     votes: ['leonardodicaprio'],
+    //     text: 'write Swift'
+    //   }
 
-    
+
 
     return (
         <div className="voteResult-container">
             <div className="voteResult-title">
-                <div>
-
-                </div>
                 <h1>Vote Result</h1>
             </div>
             <div className="voteResult-value">
@@ -25,7 +32,7 @@ function VoteResult(props) {
                     <div>2 out of 3 votes</div>
                 </div>
                 <ProgressBar value={3}/>
-                <div className="voteResult-question">be a Python developer</div>
+                <div className="voteResult-question">{optionOne.text}</div>
             </div>
             <div className="voteResult-value">
                 <div className="voteResult-percent">
@@ -33,7 +40,7 @@ function VoteResult(props) {
                     <div>1 out of 3 votes</div>
                 </div>
                 <ProgressBar value={1}/>
-                <div className="voteResult-question">be a React developer</div>
+                <div className="voteResult-question">{optionTwo.text}</div>
             </div>
             <Link to="/">
                 <button className="post-btn" onClick={""}>
@@ -51,7 +58,7 @@ function VoteResult(props) {
 
 const mapStateToProps = state => {
     return {
-        questions: state.questions.question
+        question: state.questions.question
     }
 }
 
