@@ -5,12 +5,30 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    gap:1.5rem;
-    
+    gap:2.5rem;
+
     .post-btn polygon {
         fill: white;
     }
     .post-btn path {
         fill: white;
     }
+
+    .voteResult-title {
+
+    }
+
+    .voteResult-value {
+        .voteResult-percent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+        }
+
+        .voteResult-question {
+            margin-top: 0.7rem;
+        }
+    }
+
 }

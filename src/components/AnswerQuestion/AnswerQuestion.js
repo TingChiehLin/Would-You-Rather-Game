@@ -14,10 +14,11 @@ const AnswerQuestion = (props) => {
     const [optionSelected, setOptionSelected] = useState('optionOne');
     const [isSubmitted, setisSubmitted] = useState(false);
     const saveUserAnswer = () => {
-        saveAnswer({})
+        saveAnswer({userDetails, question_id, questionAnswer1, questionAnswer2})
         setisSubmitted(true);
     }
 
+    const userDetails = props.userInfo[props.authedUser];
     const questionAnswer1 = props.question[question_id].optionOne.text;
     const questionAnswer2 = props.question[question_id].optionTwo.text;
 
@@ -56,33 +57,16 @@ const AnswerQuestion = (props) => {
 
 const mapStateToProps = state => {
     return {
-        question: state.questions.question
+        question: state.questions.question,
+        userInfo: state.users.result,
+        authedUser: state.users.authedUser,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        saveAnswer: () => dispatch(saveAnswer())
+        saveAnswer: (answer) => dispatch(saveAnswer(answer))
     }
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(AnswerQuestion)
-
-
-    // export const saveQuestion = ({author, optionOneText, optionTwoText}) => {
-    //     return async dispatch => {
-    //         const questions = await _saveQuestion({author, optionOneText, optionTwoText});
-    //         dispatch(getQuestion_result(questions))
-    //         dispatch(user_result())
-    //     }
-    // }
-    
-    // export const saveAnswer = ({author, qid, answer}) => {
-
-        // const question = dispatch(
-        //     savingQuestion({
-        //       optionOneText: e.target.inputone.value,
-        //       optionTwoText: e.target.inputtwo.value,
-        //       author: user,
-        //     })
-        //   );

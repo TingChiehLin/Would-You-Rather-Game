@@ -1,14 +1,13 @@
 .progress-container {
     width: 30rem;
-    height: 50px;
-    border-radius: 10px;
-    border:0px solid #6402a4;
-    // margin: 10px auto;
+    height: 30px;
+    border-radius: 3px;
+    border:0px solid rgb(225, 225, 225);
+    background-color:#e9ecef;
     div {
         width: 100%;
         height: 100%;
-        border-radius: 10px;
-        background-color: #cacc5b;
+        background-color: #f1c40f;
     }
 }
 

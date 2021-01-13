@@ -9,8 +9,6 @@ function Addquestion(props) {
     const [optionAText, setOptionTextA] = useState(''); 
     const [optionBText, setOptionTextB] = useState(''); 
 
-    const userDetails = props.userInfo[props.authedUser];
-
     const texAtChangeHandler = event => {
         setOptionTextA(event.target.value);
     }

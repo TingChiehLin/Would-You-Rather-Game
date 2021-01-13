@@ -6,7 +6,7 @@ export default (props) => {
 
     return (
         <div className="progress-container">
-            <div style={{ width: `${value}%` }}></div>
+            <div style={{ width: `${value * 10}%` }}></div>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import { IconContext } from 'react-icons';
 import { FcAnswers } from 'react-icons/fc';
@@ -20,8 +20,6 @@ function QuestionCard(props) {
     });
     // .toLocaleString();
     const formatterData = formatter.formatToParts(date);
-    // const [isAnswered, setisAnswered] = useState(false);
-
     return (
         <div className="post-container" >
             <div className="post-container-intro">

@@ -65,9 +65,9 @@ const Navigation = (props) => {
               </a>
             </li>
             <Link to="">
-            <li className="center" onClick={LogOut}>
-                Log Out
-            </li>
+              <li className="center" onClick={LogOut}>
+                  Log Out
+              </li>
             </Link>
             {/* <li className="center">
               <SwitchDarkLight/>
