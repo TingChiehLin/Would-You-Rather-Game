@@ -41,7 +41,7 @@ class Login extends Component {
       <div className="login-page">
         <div className="lognin-container">
           <div className="title">Would You Rather?</div>
-          <img src="./logo.svg" className="App-logo" alt="logo" />
+          <img src="/logo.svg" className="App-logo" alt="logo" />
         </div>
         <div className="user-container">
           {Object.values(this.props.userInfo).map((e) => (
