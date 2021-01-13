@@ -69,9 +69,9 @@ const Navigation = (props) => {
                 Log Out
             </li>
             </Link>
-            <li className="center">
+            {/* <li className="center">
               <SwitchDarkLight/>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

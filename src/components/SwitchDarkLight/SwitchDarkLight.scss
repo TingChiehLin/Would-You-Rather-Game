@@ -12,10 +12,16 @@ $blackColor: black;
         opacity: 0;
         width: 0;
         height: 0;
-        // &::checked {
-        //     transform: translateX(40px);
+    }
 
-        // }
+    input:checked {
+        + .slider {
+            background-color: #fd5d00;
+            box-shadow: 0 0 12px #fd5d00;
+            :before {
+                transform: translateX(80px);
+            }
+        }
     }
 
     .onoff {
@@ -49,14 +55,14 @@ $blackColor: black;
     }
 }
 
-.light-mode {
+.light-mode *{
     background-color: #fff;
-    color: #333;
+    color: black;
     transition: $blackColor 0.25s ease-out;
 }
 
-.dark-mode {
-    background-color: #1a1919;
-    color: #999;
+.dark-mode *{
+    background-color: #17191A;
+    color: white;
     transition: $blackColor 0.25s ease-out;
 }

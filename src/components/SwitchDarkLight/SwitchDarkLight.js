@@ -6,6 +6,8 @@ function SwitchDarkLight() {
     const [darkMode, setDarkMode] = useState(getInitialMode());
     useEffect(() => {
         localStorage.setItem('dark', JSON.stringify(darkMode));
+        document.body.classList.add(darkMode ? 'dark-mode' : 'light-mode');
+        document.body.classList.remove(darkMode ? 'light-mode' : 'dark-mode');
     },[darkMode])
 
     function getInitialMode() {
