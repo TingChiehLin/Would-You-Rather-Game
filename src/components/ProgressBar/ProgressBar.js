@@ -1,9 +1,8 @@
 import React from 'react';
 import './ProgressBar.scss';
 
-export default (props) => {
+const ProgressBar = (props) => {
     const {value} = props;
-    console.log(value);
     return (
         <div className="progress-container">
             <div style={{ width: `${value}%`}}></div>
@@ -11,3 +10,4 @@ export default (props) => {
     );
 }
 
+export default ProgressBar;

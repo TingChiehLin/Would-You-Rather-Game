@@ -6,6 +6,6 @@ export {
 export {
     getQuestion_result,
     saveQuestion,
-    saveAnswer
+    saveAnswer,
 } from './question';
 

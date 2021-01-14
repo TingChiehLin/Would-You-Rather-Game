@@ -12,24 +12,37 @@ import VoteResult from '../VoteResult/VoteResult';
 const AnswerQuestion = (props) => {
     const { question_id } = useParams()
     const [optionSelected, setOptionSelected] = useState('optionOne');
-    const [isSubmitted, setisSubmitted] = useState(false);
+    // const [isSubmitted, setIsSubmitted] = useState(false);
+    const authedUser = props.userInfo[props.authedUser];
+
     const saveUserAnswer = () => {
         props.saveAnswer({
             author: props.authedUser,
             qid: question_id,
             answer: optionSelected,
         })
-        setisSubmitted(true);
+
+        // setIsSubmitted(true);
     }
 
-    const userDetails = props.userInfo[props.authedUser];
+//   const userDetails = props.userInfo[props.authedUser];
+//   const selectedQuestions = Object.values(props.question);
+
+//   const answeredQuestions = selectedQuestions.filter((q) => {
+//     return userDetails.answers[q.id];
+//   })
+//   const unansweredQuestions = selectedQuestions.filter((q) => {
+//     return !userDetails.answers[q.id];
+//   })
+
     const questionAnswer1 = props.question[question_id].optionOne.text;
     const questionAnswer2 = props.question[question_id].optionTwo.text;
 
     return (
         <div className="answer_container">
-            {isSubmitted ? <VoteResult question={props.question}/>
-            : <><h1>Would you rather ?</h1>
+            {authedUser.answers[question_id] === 'optionOne' || authedUser.answers[question_id] === 'optionTwo'
+                ? <VoteResult question={props.question}/>
+                : <><h1>Would you rather ?</h1>
             <form action="" className="post-container-question-option">
                 <div className="post-container-question-option-center">
                     <input className="input-radio-size" type="radio" value="optionOne"
@@ -58,7 +71,7 @@ const AnswerQuestion = (props) => {
         </div>
     )
 }
-
+// onChange={() => setDarkMode(prevMode => !prevMode)}/>
 const mapStateToProps = state => {
     return {
         question: state.questions.question,
@@ -69,7 +82,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        saveAnswer: (answer) => dispatch(saveAnswer(answer))
+        saveAnswer: (answer) => dispatch(saveAnswer(answer)),
+
     }
 }
 

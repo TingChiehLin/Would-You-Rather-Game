@@ -34,20 +34,12 @@ export const saveQuestion = ({author, optionOneText, optionTwoText}) => {
 
 export const saveAnswer = ({author, qid, answer}) => {
     return async dispatch => {
-        const answers = await _saveQuestionAnswer({
+        await _saveQuestionAnswer({
                 authedUser:author, 
                 qid, 
                 answer
-            });
-        dispatch(showAnswer_Result(answers))
+        });
+        dispatch(showAnswer_Result({author, qid, answer}))
         dispatch(user_result())
     }
 }
-
-// export const saveAnswer = ({author, qid, answer}) => {
-//     return async dispatch => {
-//         const answers = await _saveQuestionAnswer({author, qid, answer});
-//         dispatch(showAnswer_Result(answers))
-//         dispatch(user_result())
-//     }
-// }
