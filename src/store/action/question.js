@@ -35,7 +35,7 @@ export const saveQuestion = ({author, optionOneText, optionTwoText}) => {
 export const saveAnswer = ({author, qid, answer}) => {
     return async dispatch => {
         await _saveQuestionAnswer({
-                authedUser:author, 
+                authedUser: author, 
                 qid, 
                 answer
         });

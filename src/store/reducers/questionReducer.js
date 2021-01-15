@@ -3,7 +3,7 @@ import { updateObject } from '../../utils/utility';
 
 const initialState = {
     question:{},
-    answers:{},
+    answer:{},
 }
 
 const questionReducer = (state = initialState, action) => {

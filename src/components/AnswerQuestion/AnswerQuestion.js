@@ -12,7 +12,6 @@ import VoteResult from '../VoteResult/VoteResult';
 const AnswerQuestion = (props) => {
     const { question_id } = useParams()
     const [optionSelected, setOptionSelected] = useState('optionOne');
-    // const [isSubmitted, setIsSubmitted] = useState(false);
     const authedUser = props.userInfo[props.authedUser];
 
     const saveUserAnswer = () => {
@@ -21,19 +20,7 @@ const AnswerQuestion = (props) => {
             qid: question_id,
             answer: optionSelected,
         })
-
-        // setIsSubmitted(true);
     }
-
-//   const userDetails = props.userInfo[props.authedUser];
-//   const selectedQuestions = Object.values(props.question);
-
-//   const answeredQuestions = selectedQuestions.filter((q) => {
-//     return userDetails.answers[q.id];
-//   })
-//   const unansweredQuestions = selectedQuestions.filter((q) => {
-//     return !userDetails.answers[q.id];
-//   })
 
     const questionAnswer1 = props.question[question_id].optionOne.text;
     const questionAnswer2 = props.question[question_id].optionTwo.text;
