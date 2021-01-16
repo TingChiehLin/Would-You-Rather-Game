@@ -4,7 +4,7 @@ import { hideLoading, showLoading } from 'react-redux-loading';
 import { user_result } from './user';
 
 //Action Creator
-const showResult = (questions) => ({
+const showQuestion_Result = (questions) => ({
         type: actionType.SAVE_QUESTION,
         questions
 })
@@ -19,7 +19,7 @@ export const getQuestion_result = () => {
     return async dispatch => {
         const questions = await _getQuestions();
         dispatch(showLoading())
-        dispatch(showResult(questions))
+        dispatch(showQuestion_Result(questions))
         dispatch(hideLoading())
     }
 }

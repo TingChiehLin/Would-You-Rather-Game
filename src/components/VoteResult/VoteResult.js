@@ -14,8 +14,9 @@ function VoteResult(props) {
 
     const totalNumberOfOption1Vote = optionOne.votes.length;
     const totalNumberOfOption2Vote = optionTwo.votes.length;
-    const totalPercent1 = Math.floor(totalNumberOfOption1Vote / 3 * 100);
-    const totalPercent2 = Math.floor(totalNumberOfOption2Vote / 3 * 100);
+    const totalVoteNumber = totalNumberOfOption1Vote + totalNumberOfOption2Vote;
+    const totalPercent1 = Math.floor(totalNumberOfOption1Vote / totalVoteNumber * 100);
+    const totalPercent2 = Math.floor(totalNumberOfOption2Vote / totalVoteNumber * 100);
 
     return (
         <div className="voteResult-container">
@@ -25,7 +26,7 @@ function VoteResult(props) {
             <div className="voteResult-value">
                 <div className="voteResult-percent">
                     <div>{`${totalPercent1} %`}</div>
-                    <div>{totalNumberOfOption1Vote} out of 3 votes</div>
+                    <div>{totalNumberOfOption1Vote} out of {totalVoteNumber} votes</div>
                 </div>
                 <ProgressBar value={totalPercent1}/>
                 <div className="voteResult-question">{optionOne.text}</div>
@@ -33,7 +34,7 @@ function VoteResult(props) {
             <div className="voteResult-value">
                 <div className="voteResult-percent">
                     <div>{`${totalPercent2} %`}</div>
-                    <div>{totalNumberOfOption2Vote} out of 3 votes</div>
+                    <div>{totalNumberOfOption2Vote} out of {totalVoteNumber} votes</div>
                 </div>
                 <ProgressBar value={totalPercent2}/>
                 <div className="voteResult-question">{optionTwo.text}</div>

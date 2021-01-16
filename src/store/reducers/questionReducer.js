@@ -17,7 +17,8 @@ const questionReducer = (state = initialState, action) => {
         case actionType.SAVE_ANSWER:
             return updateObject(
                 state, {
-                    answer: action.answers
+                    answer: {...action.answers},
+                    question: action.questions
                 }
             )
         default:
