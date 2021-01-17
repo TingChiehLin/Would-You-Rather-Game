@@ -15,16 +15,32 @@ const questionReducer = (state = initialState, action) => {
                  }
              )
         case actionType.SAVE_ANSWER:
+            const {qid, answer, author} = action.answers;
+            const answers = state.answer;
+            const questions = state.question; 
+            const userToBeUpdated = answers[qid];
+            userToBeUpdated.answers[qid] = answer;
+            const questionToBeUpdated = questions[qid];
+            questionToBeUpdated[answer].votes.push(author);
             return updateObject(
-                state, {
-                    answer: {...action.answers},
-                    question: action.questions
+                state,{
+                    questions,
+                    answers
                 }
             )
         default:
             return state
-     }
-
+    }
 }
 
 export default questionReducer;
+
+// return updateObject(
+// case actionType.SAVE_ANSWER:
+//     const updatedQuestion = {...state.question[action.answers.qid]};
+//     updatedQuestion[action.answers.answer].votes.concat(action.answers.author)
+//     return updateObject(
+//         state, {
+//             [action.answers.qid]: updatedQuestion 
+//         }
+// )
