@@ -22,7 +22,10 @@ http://localhost:3000/ - Enter your link on the broswer
 
 ## Result
 
-[![Would you Rather Game?]<img width="1288" alt="Home" src="https://user-images.githubusercontent.com/17351134/105187759-40c07780-5b87-11eb-9459-be94f616db5b.png>](https://youtu.be/4hBVIb3rV54)
+#### Demo
+<img width="1784" alt="Search" src="https://user-images.githubusercontent.com/17351134/105187759-40c07780-5b87-11eb-9459-be94f616db5b.png">
+
+[Youtube](https://youtu.be/4hBVIb3rV54)
 
 ## Link 
 [Would you rather game App]()
