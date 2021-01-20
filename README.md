@@ -22,10 +22,9 @@ http://localhost:3000/ - Enter your link on the broswer
 
 ## Result
 
-#### Demo
-<img width="1784" alt="Search" src="https://user-images.githubusercontent.com/17351134/105187759-40c07780-5b87-11eb-9459-be94f616db5b.png">
+### Demo
 
-[Youtube](https://youtu.be/4hBVIb3rV54)
+<img width="1784" alt="Home" src="https://user-images.githubusercontent.com/17351134/105187759-40c07780-5b87-11eb-9459-be94f616db5b.png">
 
 ## Link 
 [Would you rather game App]()
