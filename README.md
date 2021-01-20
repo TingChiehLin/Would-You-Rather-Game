@@ -10,19 +10,6 @@ The app is to let players to poll and vote. A user can login to choose one of us
 * CSS
 * React & Redux
 
-## API 
-
-<!-- [NASA Mars Photo API](https://github.com/chrisccerami/mars-photo-api) -->
-
-<!-- ## Import NASA API
-
-* Create .env file in the root path
-* Input your API Key in the .env file
-
-```
-API_KEY=You NASA API Key
-``` -->
-
 ## Get Started
 
 ```
@@ -35,7 +22,7 @@ http://localhost:3000/ - Enter your link on the broswer
 
 ## Result
 
-
+[![Would you Rather Game?](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/4hBVIb3rV54)
 
 ## Link 
 [Would you rather game App]()
